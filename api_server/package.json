@@ -1,0 +1,54 @@
+{
+  "name": "fairweatherhikers",
+  "version": "0.1.0",
+  "description": "Choose your hiking trail based on weather conditions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cliffhangerz/fairweatherhikers.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Gene Troy",
+    "email": ""
+  },
+  "contributors": [
+    {
+      "name": "Ali Forman",
+      "email": ""
+    },
+    {
+      "name": "Tim Forman",
+      "email": ""
+    },
+    {
+      "name": "James Norton",
+      "email": ""
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cliffhangerz/fairweatherhikers/issues"
+  },
+  "homepage": "https://github.com/cliffhangerz/fairweatherhikers",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "bcrypt": "latest",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "forecastio": "1.0.1",
+    "jsonwebtoken": "^6.1.1",
+    "mongoose": "^4.4.14"
+  }
+}
