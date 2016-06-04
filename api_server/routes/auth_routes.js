@@ -2,6 +2,7 @@ const express = require('express');
 const User = require(__dirname + '/../models/user');
 const bodyParser = require('body-parser').json();
 const basicHttp = require(__dirname + '/../lib/basic_http');
+const jwtAuth = require(__dirname + '/../lib/jwt_auth');
 const handleDBError = require(__dirname + '/../lib/db_error_handler');
 
 var authenticationRouter = module.exports = exports = express.Router();
@@ -47,4 +48,8 @@ authenticationRouter.get('/signin', basicHttp, (req, res) => {
       return res.status(200).json({ msg: 'successful signin', token: token });
     });
   });
+});
+
+authenticationRouter.get('/profile', jwtAuth, function(req, res) {
+  res.send({ email: req.user.email});
 });
