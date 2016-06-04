@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "node_modules/mocha/bin/mocha test",
-    "start": "node index.js"
+    "startbackend": "node index.js",
+    "startclient": "node client/client_server.js"
   },
   "repository": {
     "type": "git",
