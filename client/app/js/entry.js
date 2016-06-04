@@ -13,12 +13,12 @@ demoApp.config(['$routeProvider', function($rp) {
       controllerAs: 'trailsctrl'
     })
     .when('/signup', {
-      templateUrl: 'templates/auth/views/auth_view.html',
+      templateUrl: 'templates/auth_view/auth_view.html',
       controller: 'SignUpController',
       controllerAs: 'authctrl'
     })
     .when('/signin', {
-      templateUrl: 'templates/auth/views/auth_view.html',
+      templateUrl: 'templates/auth_view/auth_view.html',
       controller: 'SignInController',
       controllerAs: 'authctrl'
     })
