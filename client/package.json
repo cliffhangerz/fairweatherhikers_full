@@ -1,0 +1,68 @@
+{
+  "name": "fairweatherhikers",
+  "version": "0.1.1",
+  "description": "Choose your hiking trail based on weather conditions",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cliffhangerz/fairweatherhikers_full.git"
+  },
+  "author": {
+    "name": "Gene Troy",
+    "email": ""
+  },
+  "contributors": [
+    {
+      "name": "Ali Forman",
+      "email": ""
+    },
+    {
+      "name": "Tim Forman",
+      "email": ""
+    },
+    {
+      "name": "James Norton",
+      "email": ""
+    },
+    {
+      "name": "Kris Skelton",
+      "email": ""
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cliffhangerz/fairweatherhikers_full/issues"
+  },
+  "homepage": "https://github.com/cliffhangerz/fairweatherhikers_full",
+  "dependencies": {
+    "express": "4.13.4"
+  },
+  "devDependencies": {
+    "angular": "1.5.6",
+    "angular-mocks": "1.5.6",
+    "babel": "6.5.2",
+    "babel-core": "6.9.1",
+    "chai": "3.5.0",
+    "chai-http": "2.0.1",
+    "gulp": "3.9.1",
+    "gulp-eslint": "2.0.0",
+    "gulp-minify-css": "1.2.4",
+    "gulp-protractor": "2.4.0",
+    "gulp-sass": "2.3.1",
+    "gulp-sourcemaps": "1.6.0",
+    "html-loader": "0.4.3",
+    "jasmine-core": "2.4.1",
+    "karma": "0.13.22",
+    "karma-chrome-launcher": "1.0.1",
+    "karma-jasmine": "1.0.2",
+    "mongoose": "4.4.19",
+    "webpack-stream": "3.2.0"
+  }
+}
