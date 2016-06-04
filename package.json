@@ -1,14 +1,14 @@
 {
-  "name": "fairweatherhikers",
+  "name": "fairweatherhikers_full_build",
   "version": "0.1.1",
-  "description": "Choose your hiking trail based on weather conditions",
+  "description": "Choose your hiking trail based on weather conditions, with Angular",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "node_modules/mocha/bin/mocha test",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   },
   "author": {
     "name": "Gene Troy",
-    "email": ""
+    "email": "penguintroy@gmail.com"
   },
   "contributors": [
     {
@@ -42,7 +42,12 @@
   },
   "homepage": "https://github.com/cliffhangerz/fairweatherhikers_full",
   "dependencies": {
-    "express": "4.13.4"
+    "bcrypt": "latest",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "forecastio": "1.0.1",
+    "jsonwebtoken": "^6.1.1",
+    "mongoose": "^4.4.14"
   },
   "devDependencies": {
     "angular": "1.5.6",
@@ -55,6 +60,7 @@
     "gulp": "3.9.1",
     "gulp-eslint": "2.0.0",
     "gulp-minify-css": "1.2.4",
+    "gulp-mocha": "^2.2.0",
     "gulp-protractor": "2.4.0",
     "gulp-sass": "2.3.1",
     "gulp-sourcemaps": "1.6.0",
@@ -63,6 +69,7 @@
     "karma": "0.13.22",
     "karma-chrome-launcher": "1.0.1",
     "karma-jasmine": "1.0.2",
+    "mocha": "^2.4.5",
     "mongoose": "4.4.19",
     "webpack-stream": "3.2.0"
   }
