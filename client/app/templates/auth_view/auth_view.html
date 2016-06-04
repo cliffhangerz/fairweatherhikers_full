@@ -1,0 +1,17 @@
+<section>
+  <h1>{{authctrl.signup ? 'Sign-Up as New User':'Sign-In as Existing User'}}</h1>
+  <form name="authform" data-ng-submit="authctrl.authenticate(authctrl.user)">
+
+    <a data-ng-href="/#/{{authctrl.signup? 'Sign-In':'Sign-Up'}}">{{(authctrl.signup ? 'Or Sign-in as Exisiting User':'OR Sign-Up as New User')}}</a>
+    <label for="username">Username:</label>
+    <input type="text" required data-ng-model="authctrl.user.email">
+
+    <label for="password">Password:</label>
+    <input type="password" required data-ng-model="authctrl.user.password">
+
+    <label data-ng-if="authctrl.signup" for="confirmation">Confirmation:</label>
+    <input data-ng-if="authctrl.signup" required type="password" data-ng-model="authctrl.user.confirmation">
+
+    <button type="submit" data-ng-disabled="authform.$invalid">{{authctrl.buttonText}}</button>
+  </form>
+</section>
