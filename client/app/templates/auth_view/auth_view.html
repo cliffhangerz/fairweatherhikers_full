@@ -3,7 +3,7 @@
   <form name="authform" data-ng-submit="authctrl.authenticate(authctrl.user)">
 
     <a data-ng-href="/#/{{authctrl.signup? 'Sign-In':'Sign-Up'}}">{{(authctrl.signup ? 'Or Sign-in as Exisiting User':'OR Sign-Up as New User')}}</a>
-    <label for="username">Username:</label>
+    <label for="email">Username:</label>
     <input type="text" required data-ng-model="authctrl.user.email">
 
     <label for="password">Password:</label>
