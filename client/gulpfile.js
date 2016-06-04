@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const maps = require('gulp-sourcemaps');
 const webpack = require('webpack-stream');
-const eslint = require('eslint');
+const eslint = require('gulp-eslint');
 
 var lintFiles = ['**/*.js', '!node_modules/**', '!build/**', '!**/*spec.js',
 '!**/*test.js', '!test/**bundle.**'];
