@@ -1,0 +1,23 @@
+<section data-ng-init="globalAuth.getEmail()">
+  <ul id="error">
+    <li data-ng-repeat="error in trailsctrl.errors">{{error.message}}<button data-ng-click="trailsctrl.errors.splice(trailsctrl.errors.indexOf(error), 1)">x</button></li>
+  </ul>
+
+  <trail-form 
+    data-button-text="Create Trail"
+    data-action="create"
+    data-trail="trailsctrl.newTrail">
+  </trail-form>
+
+  <ul id="traillist">
+    <trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
+      <trail-form
+        data-ng-if="trail.editing"
+        data-button-text="Update Trail"
+        data-action="update"
+        data-trail="trail">
+        <button data-ng-click="trail.editing = false">Cancel</button>
+      </trail-form>
+    </trail-list-item>
+  </ul>
+</section>
