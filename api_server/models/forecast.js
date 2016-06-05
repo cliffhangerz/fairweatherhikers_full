@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 var forecastSchema = new mongoose.Schema({
-  currentDay: { type: String },
+  currentDay: { type: Number },
   currentSummary: { type: String },
   currentIcon: { type: String },
   currentPrecipitationProbability: { type: Number },
