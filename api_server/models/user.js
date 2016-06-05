@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 var userSchema = mongoose.Schema({ //eslint-disable-line
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  userId: { type: String },
   findHash: { type: String, unique: true }
 });
 
