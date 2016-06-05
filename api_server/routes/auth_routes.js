@@ -50,6 +50,6 @@ authenticationRouter.get('/signin', basicHttp, (req, res) => {
   });
 });
 
-authenticationRouter.get('/profile', jwtAuth, function(req, res) {
+authenticationRouter.get('/userprofile', jwtAuth, function(req, res) {
   res.send({ email: req.user.email});
 });
