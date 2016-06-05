@@ -14,7 +14,7 @@ module.exports = function(app) {
         .then((res) => {
           auth.saveToken(res.data.token);
           auth.getEmail();
-          $location.path('/trails');
+          $location.path('/userprofile');
         }, handleError(this.errors, 'Could not sign-in user.'));
     };
   }]);

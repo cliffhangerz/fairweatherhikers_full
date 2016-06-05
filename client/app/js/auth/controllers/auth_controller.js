@@ -1,5 +1,6 @@
 module.exports = function(app) {
   app.controller('AuthController', ['fwhAuth', 'handleError',  '$location', function(auth, handleError, $location) {
+    this.trails = [];
     this.email = '';
     this.errors = [];
     this.getEmail = function() {
