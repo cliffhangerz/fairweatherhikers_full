@@ -1,0 +1,13 @@
+<form data-ng-submit="save(trail)">
+  <label for="trail_name">Trail Name</label>
+  <input type="text" name="trail_name" data-ng-model="trail.loc">
+
+  <label for="difficulty">Difficulty</label>
+  <input type="text" name="difficulty" data-ng-model="trail.difficulty">
+
+  <label for="length">Distance</label>
+  <input type="text" name="length" data-ng-model="trail.length" placeholder="distance">
+
+  <button type="submit">{{buttonText}}</button>
+  <ng-transclude></ng-transclude>
+</form>
