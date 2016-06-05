@@ -2,5 +2,6 @@
   <ng-transclude></ng-transclude>
   <span data-ng-if="!trail.editing">{{trail.loc}} is approximately {{trail.length}} and is rated {{trail.difficulty}} trail.</span>
   <button data-ng-if="!trail.editing" data-ng-click="trail.editing = true">Edit</button>
-  <button data-ng-click="remove(Trail)">Remove Trail</button>
+  <button data-ng-click="remove(trail)">Remove Trail</button>
+  <button type="submit" data-ng-click="create(trail)">Add Fave Trail</button>
 </li>
