@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 const trailRouter = require(__dirname + '/routes/trail_routes');
+const favoriteRouter = require(__dirname + '/routes/favorite_routes');
 const authRouter = require(__dirname + '/routes/auth_routes');
 const hikeMatchRouter = require(__dirname + '/routes/hikematch_routes');
 
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api', trailRouter);
+app.use('/api', favoriteRouter);
 app.use('/api', authRouter);
 app.use('/api', hikeMatchRouter);
 
