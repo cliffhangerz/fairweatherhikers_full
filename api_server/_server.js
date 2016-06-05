@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 const trailRouter = require(__dirname + '/routes/trail_routes');
 const authRouter = require(__dirname + '/routes/auth_routes');
 const hikeMatchRouter = require(__dirname + '/routes/hikematch_routes');
+const forecastRouter = require(__dirname + '/routes/forecast_routes');
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 app.use('/api', trailRouter);
 app.use('/api', authRouter);
 app.use('/api', hikeMatchRouter);
+app.use('/api', forecastRouter);
 
 module.exports = exports = {
   server: { close: function() {
