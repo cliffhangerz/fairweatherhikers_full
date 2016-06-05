@@ -1,0 +1,23 @@
+<section data-ng-init="globalAuth.getEmail()">
+  <ul id="error">
+    <li data-ng-repeat="error in usersctrl.errors">{{error.message}}<button data-ng-click="usersctrl.errors.splice(usersctrl.errors.indexOf(error), 1)">x</button></li>
+  </ul>
+
+  <user-form 
+    data-button-text="Add Favorite"
+    data-action="create"
+    data-trail="trailsctrl.newTrail">
+  </user-form>
+
+ <!--  <ul id="userlist">
+    <user-list-item data-ng-repeat="user in usersctrl.users" data-email="email">
+      <user-form
+        data-ng-if="user.editing"
+        data-button-text="Update Email"
+        data-action="update"
+        data-email="email">
+        <button data-ng-click="user.editing = false">Cancel</button>
+      </user-form>
+    </user-list-item>
+  </ul> -->
+</section>
