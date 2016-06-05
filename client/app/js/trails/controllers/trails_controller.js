@@ -6,6 +6,7 @@ module.exports = function(app) {
     this.errors = [];
     var remote = new Resource(this.trails, this.errors, baseUrl + '/api/trails', {errMsgs: {getAll: 'Trails Error.'}});
     this.getAll = remote.getAll.bind(remote);
+
     this.createTrail = function() {
       remote.create(this.newTrail)
         .then(() => {
@@ -18,7 +19,7 @@ module.exports = function(app) {
           trail.editing = false;
         });
     };
-    this.removeTrail = remote.remove.bind(remote); 
+    this.removeTrail = remote.remove.bind(remote);
     this.getAll();
   }]);
 };
