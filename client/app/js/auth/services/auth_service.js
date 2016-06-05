@@ -24,7 +24,7 @@ module.exports = function(app) {
           if (this.email) return resolve(this.email);
           if (!this.getToken()) return reject(new Error('No valid token.'));
 
-          $http.get(baseUrl + '/api/profile') 
+          $http.get(baseUrl + '/api/userprofile') 
             .then((res) => {
               this.email = res.data.email;
               resolve(res.data.email);
