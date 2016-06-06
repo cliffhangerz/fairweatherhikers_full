@@ -1,3 +1,4 @@
+const angular = require('angular');
 var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
