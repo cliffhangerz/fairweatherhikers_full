@@ -5,6 +5,8 @@ require('./services')(demoApp);
 require('./trails')(demoApp);
 require('./userprofile')(demoApp);
 require('./auth')(demoApp);
+require('./map')(demoApp);
+
 
 demoApp.config(['$routeProvider', function($rp) {
   $rp
@@ -12,6 +14,11 @@ demoApp.config(['$routeProvider', function($rp) {
       templateUrl: 'templates/trails/views/trails_view.html',
       controller: 'TrailsController',
       controllerAs: 'trailsctrl'
+    })
+    .when('/map', {
+      templateUrl: 'templates/maps/views/map_view.html',
+      controller: 'MapController',
+      controllerAs: 'mapctrl'
     })
     .when('/userprofile', {
       templateUrl: 'templates/userprofile/views/userprofile_view.html',
