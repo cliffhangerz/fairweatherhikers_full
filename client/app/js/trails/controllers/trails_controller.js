@@ -22,6 +22,5 @@ module.exports = function(app) {
     };
     this.removeTrail = remote.remove.bind(remote);
     this.getAll();
-    $scope.currentPath = $location.hash();
   }]);
 };
