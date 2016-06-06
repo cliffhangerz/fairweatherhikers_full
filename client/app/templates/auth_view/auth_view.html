@@ -1,5 +1,4 @@
 <section class="auth-view">
-<!--   <h1>{{authctrl.signup ? 'New User':'Existing User'}}</h1> -->
   <form name="authform" data-ng-submit="authctrl.authenticate(authctrl.user)">
 
     <a data-ng-href="/#/{{authctrl.signup? 'signin':'signup'}}">{{authctrl.signup ? 'New User':'Existing User'}} || {{(authctrl.signup ? 'Existing User':'New User')}}</a>
@@ -14,12 +13,8 @@
 
     <button type="submit" data-ng-disabled="authform.$invalid">{{authctrl.buttonText}}</button>
   </form>
-
-  <div data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
-  	<default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-  	<li>{{trail.loc}} is approximately {{trail.length}} miles long and rated {{trail.difficulty}}.</li>
-  </div>
-
 </section>
-
-<br />
+<div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
+  <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
+  <li>{{trail.loc}} | {{trail.length}} miles | rating: {{trail.difficulty}}</li>
+</div>
