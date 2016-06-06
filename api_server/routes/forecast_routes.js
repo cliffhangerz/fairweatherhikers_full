@@ -19,8 +19,10 @@ forecastRouter.get('/forecast', (req, res) => {
 forecastRouter.post('/forecast', bodyParser, (req, res) => {
   console.log("Trying to POST to forecast...");
   var newForecast = new Forecast(req.body);
+  console.log('this is req.body: ', req.body);
   newForecast.save((err, data) => {
     console.log("trying to SAVE in forecast routes");
+    console.log("this is the data: ", data);
     if (err) return errorHandler(err, res);
     res.status(200).json(data);
   });

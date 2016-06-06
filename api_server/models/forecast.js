@@ -7,7 +7,6 @@ var forecastSchema = new mongoose.Schema({
   currentPrecipitationProbability: { type: Number },
   currentTemperature: { type: Number },
   currentTemperatureMax: { type: Number },
-  notCurrent: {
     weekDay: { type: String },
     weekDaySummary: { type: String },
     weekDayIcon: { type: String },
@@ -15,7 +14,6 @@ var forecastSchema = new mongoose.Schema({
     weekDayTemperature: { type: Number },
     weekDayTemperatureMin: { type: Number },
     weekDayTemperatureMax: { type: Number }
-  }
 });
 
 module.exports = mongoose.model('Forecast', forecastSchema);
