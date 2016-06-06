@@ -30,11 +30,19 @@ gulp.task('static:dev', () => {
     .pipe(gulp.dest('client/build'));
 });
 
+gulp.task('sass:dev', () => {
+ gulp.src('client/app/scss/*.scss')
+   .pipe(maps.init())
+   .pipe(sass().on('error', sass.logError))
+   .pipe(maps.write('./'))
+   .pipe(gulp.dest('client/build'));
+});
+
 gulp.task('lint:dev', () => {
   return gulp.src(lintFiles)
     .pipe(eslint())
     .pipe(eslint.format());
 });
 
-gulp.task('build', ['webpack:dev', 'static:dev']);
+gulp.task('build', ['webpack:dev', 'static:dev', 'sass:dev']);
 gulp.task('lint', ['lint:dev']);
