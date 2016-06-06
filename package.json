@@ -51,7 +51,8 @@
     "express": "^4.13.4",
     "forecastio": "^1.0.1",
     "jsonwebtoken": "^6.1.1",
-    "mongoose": "^4.4.14"
+    "mongoose": "^4.4.14",
+    "superagent": "^2.0.0"
   },
   "devDependencies": {
     "angular": "1.5.6",
