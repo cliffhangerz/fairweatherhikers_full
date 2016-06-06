@@ -30,11 +30,10 @@ forecastRouter.post('/forecast', bodyParser, (req, res) => {
       return errorHandler(err);
     }
   });
+  newForecast.save((err, data) => {
+    console.log("trying to SAVE in forecast routes");
+    console.log("this is the data: ", data);
+    if (err) return errorHandler(err, res);
+    res.status(200).json(data);
+  });
 });
-
-// newForecast.save((err, data) => {
-//   console.log("trying to SAVE in forecast routes");
-//   console.log("this is the data: ", data);
-//   if (err) return errorHandler(err, res);
-//   res.status(200).json(data);
-// });
