@@ -3,19 +3,12 @@ const mongoose = require('mongoose');
 var forecastSchema = new mongoose.Schema({
   lat: { type: Number },
   lon: { type: Number },
-  currentDay: { type: String },
-  currentSummary: { type: String },
-  currentIcon: { type: String },
-  currentPrecipProbability: { type: Number },
-  currentTemperature: { type: Number },
-  currentTemperatureMax: { type: Number },
-    weekDay: { type: String },
-    weekDaySummary: { type: String },
-    weekDayIcon: { type: String },
-    weekDayPrecipProbability: { type: Number },
-    weekDayTemperature: { type: Number },
-    weekDayTemperatureMin: { type: Number },
-    weekDayTemperatureMax: { type: Number }
+  day: { type: String },
+  summary: { type: String },
+  icon: { type: String },
+  precipProbability: { type: Number },
+  temperatureMin: { type: Number },
+  temperatureMax: { type: Number },
 });
 
 module.exports = mongoose.model('Forecast', forecastSchema);
