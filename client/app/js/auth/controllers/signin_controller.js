@@ -1,7 +1,7 @@
 var baseUrl = require('../../config').baseUrl;
 module.exports = function(app) {
   app.controller('SignInController', ['$http', '$location', 'handleError', 'fwhAuth', function($http, $location, handleError, auth) {
-    this.buttonText = 'Sign-in as existing user';
+    this.buttonText = 'Submit';
     this.errors = [];
     this.authenticate = function(user) {
       $http({
