@@ -27,3 +27,11 @@ forecastRouter.post('/forecast', bodyParser, (req, res) => {
     res.status(200).json(data);
   });
 });
+
+
+// newForecast.validate((err) => {
+//  console.log("validate error is: ",err);
+//  if (err) {
+//    console.log("calling error handler");
+//    return errorHandler(err);
+//  }

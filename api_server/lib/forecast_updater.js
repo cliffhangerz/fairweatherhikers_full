@@ -45,22 +45,20 @@ var request = https.get(url, (response) => {
     // // Let's add some data to the db
     // // It should overwrite whatever is there because it will change each day
     // request.post('/forecast')
-    var schemeifiedData = ({
-      currentDay: 'String',
-      currentSummary: 'String',
-      currentIcon: 'String',
-      currentPrecipitationProbability: 1,
+    var schemeifiedData = {
+      currentDay: Date(data.currently.time),
+      currentSummary: data.currently.summary,
+      currentIcon: data.currently.icon,
+      currentPrecipProbability: data.currently.precipProbability,
       currentTemperatureMin: lowTemp,
       currentTemperatureMax: highTemp,
-      notCurrent: {
-        weekDay: 'String',
-        weekDaySummary: 'String',
-        weekDayIcon: 'String',
-        weekDayPrecipitationProbability: 1,
-        weekDayTemperatureMin: lowTemp,
-        weekDayTemperatureMax: highTemp
-      }
-    });
+        weekDay: Date(data.daily.time),
+        weekDaySummary: data.daily.summary,
+        weekDayIcon: data.daily.icon,
+        weekDayPrecipProbability: data.daily.precipProbability,
+        weekDayTemperatureMin: data.daily.temperatureMin,
+        weekDayTemperatureMax: data.daily.temperatureMax
+    };
 
     var postOptions = {
       hostname: 'localhost',
@@ -70,7 +68,7 @@ var request = https.get(url, (response) => {
       json: true,
       headers: {
         'Content-Type': 'application/json'
-      },
+      }
     };
     var postData = http.request(postOptions, (res) => {
     });
