@@ -5,6 +5,7 @@ require('./services')(demoApp);
 require('./trails')(demoApp);
 require('./userprofile')(demoApp);
 require('./auth')(demoApp);
+// require('./forecast')(demoApp);
 
 demoApp.config(['$routeProvider', function($rp) {
   $rp

@@ -10,9 +10,10 @@
     "node": "^4.2.3"
   },
   "scripts": {
+    "create-db-dir": "node api_server/lib/make_directory.js",
+    "install": "npm run create-db-dir",
     "test": "node_modules/mocha/bin/mocha test",
-    "start": "node index.js",
-    "postinstall": "gulp install && webpack install && gulp build"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
