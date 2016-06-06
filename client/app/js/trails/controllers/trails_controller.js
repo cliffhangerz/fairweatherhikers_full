@@ -1,3 +1,4 @@
+const angular = require('angular');
 var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
@@ -21,5 +22,6 @@ module.exports = function(app) {
     };
     this.removeTrail = remote.remove.bind(remote);
     this.getAll();
+    $scope.currentPath = $location.hash();
   }]);
 };
