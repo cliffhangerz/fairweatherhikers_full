@@ -1,10 +1,8 @@
-const Router = require('express')
-  .Router;
+const Router = require('express').Router;
 const Forecast = require(__dirname + '/../models/forecast');
 const errorHandler = require(__dirname + '/../lib/db_error_handler');
-const forecastData = require(__dirname + '../../lib/forecast_updater');
-const bodyParser = require('body-parser')
-  .json();
+const forecastData = require(__dirname + '/../lib/forecast_updater');
+const bodyParser = require('body-parser').json();
 
 var forecastRouter = module.exports = exports = Router();
 
@@ -14,8 +12,10 @@ forecastRouter.get('/forecast', (req, res) => {
     console.log("inside forecast_routes");
     console.log('req.query:', req.query);
     if (err) return errorHandler(err, res);
-    res.status(200)
-      .json(data);
+    if (data.length === 0) {
+      data = forecastData(req.query.lat, req.query.lon)
+    };
+    res.status(200).json(data);
   });
 });
 

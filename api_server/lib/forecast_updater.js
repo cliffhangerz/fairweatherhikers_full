@@ -5,7 +5,7 @@ var lon = 122.3493;
 var API_KEY = 'fdbc915b0ead7e316556b1de658613ef';
 var fs = require('fs');
 
-function updateForecast(lat,lon) {
+module.export = exports = function(lat,lon) {
 
   var url = 'https://api.forecast.io/forecast/' + API_KEY + '/' + lat + ',-' + lon
 
@@ -48,6 +48,8 @@ function updateForecast(lat,lon) {
       // // It should overwrite whatever is there because it will change each day
       // request.post('/forecast')
       var schemeifiedData = {
+        lat: data.latitude,
+        lon: data.longitude,
         currentDay: Date(data.currently.time),
         currentSummary: data.currently.summary,
         currentIcon: data.currently.icon,
