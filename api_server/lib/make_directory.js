@@ -8,4 +8,4 @@ const fs = require('fs');
       console.log('dir exists');
     });
   }
-  checkDirectory('./db/');
+  checkDirectory('./api_server/db/');
