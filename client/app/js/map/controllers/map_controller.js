@@ -3,7 +3,8 @@ var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
   app.controller('MapController', ['fwhResource', function(Resource) {
-    this.mapinit = function() {
+    this.initMap = function() {
+      debugger;
       console.log("MAP INIT FIRING!");
 
       // TODO: models/forecast to be written
@@ -32,7 +33,7 @@ module.exports = function(app) {
           return trailMarker = '/view/rainy.png';
         };
 
-      function initMap() {
+      function makeMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: zoom,
@@ -109,9 +110,7 @@ module.exports = function(app) {
           });
         }
       }
-
-
-
+      makeMap();
     };
   }]);
 };
