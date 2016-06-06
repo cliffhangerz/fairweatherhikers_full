@@ -1,0 +1,8 @@
+1. Connecting the google_map to the database and creating a controller and a view for it.
+
+2. Create a ‘user favorites’ function. It should add object IDs under a user ID and
+store this data in the db. When called, the object IDs should point back
+to the actual object in the db.
+The properties of the actual object will be used to get forecast info from the forecast db.
+
+3.  Passing data between controllers.
