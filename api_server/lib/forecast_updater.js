@@ -47,7 +47,7 @@ module.exports = exports = function(lat, lon) {
           headers: {
             'Content-Type': 'application/json'
           }
-        };
+        }
         var postData = http.request(postOptions, (res) => {
           var preppedData = JSON.stringify(schemeifiedData);
           console.log('preppedData: ', preppedData);
