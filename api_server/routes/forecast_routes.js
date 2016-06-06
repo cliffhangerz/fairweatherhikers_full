@@ -8,21 +8,26 @@ var forecastRouter = module.exports = exports = Router();
 
 
 forecastRouter.get('/forecast', (req, res) => {
+  if(!req.query.lon.match(/-/)) req.query.lon = '-' + req.query.lon;
   Forecast.find(req.query, (err, data) => {
     console.log("inside forecast_routes");
     console.log('req.query:', req.query);
     if (err) return errorHandler(err, res);
     if (data.length === 0) {
-      data = forecastData(req.query.lat, req.query.lon)
-    };
+      forecastData(req.query.lat, req.query.lon)
+      Forecast.find(req.query, (err, data) => {
+        res.status(200).json(data);
+      })
+    } else {
     res.status(200).json(data);
+    }
   });
 });
 
 forecastRouter.post('/forecast', bodyParser, (req, res) => {
   console.log("Trying to POST to forecast...");
   var newForecast = new Forecast(req.body);
-  console.log('this is req.body: ', req.body);
+  // console.log('this is req.body: ', req.body);
   newForecast.validate((err) => {
     console.log("validate error is: ", err);
     if (err) {
@@ -31,8 +36,8 @@ forecastRouter.post('/forecast', bodyParser, (req, res) => {
     }
   });
   newForecast.save((err, data) => {
-    console.log("trying to SAVE in forecast routes");
-    console.log("this is the data: ", data);
+    // console.log("trying to SAVE in forecast routes");
+    // console.log("this is the data: ", data);
     if (err) return errorHandler(err, res);
     res.status(200).json(data);
   });

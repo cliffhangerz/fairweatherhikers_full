@@ -7,7 +7,7 @@ var fs = require('fs');
 
 module.exports = exports = function(lat, lon) {
 
-  var url = 'https://api.forecast.io/forecast/' + API_KEY + '/' + lat + ',-' + lon
+  var url = 'https://api.forecast.io/forecast/' + API_KEY + '/' + lat + ',' + lon
 
   var request = https.get(url, (response) => {
     response.setEncoding('utf-8');
@@ -48,13 +48,12 @@ module.exports = exports = function(lat, lon) {
             'Content-Type': 'application/json'
           }
         }
-        var postData = http.request(postOptions, (res) => {
+        var postData = http.request(postOptions, (res) => {});
           var preppedData = JSON.stringify(schemeifiedData);
-          console.log('preppedData: ', preppedData);
           postData.write(preppedData);
           postData.end();
-        });
       }
+      console.log('preppedData: ', preppedData);
     });
   });
 };
