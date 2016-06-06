@@ -52,12 +52,12 @@ var request = https.get(url, (response) => {
       currentPrecipProbability: data.currently.precipProbability,
       currentTemperatureMin: lowTemp,
       currentTemperatureMax: highTemp,
-        weekDay: Date(data.daily.time),
-        weekDaySummary: data.daily.summary,
-        weekDayIcon: data.daily.icon,
-        weekDayPrecipProbability: data.daily.precipProbability,
-        weekDayTemperatureMin: data.daily.temperatureMin,
-        weekDayTemperatureMax: data.daily.temperatureMax
+        weekDay: Date(data.daily.data[0].time),
+        weekDaySummary: data.daily.data[0].summary,
+        weekDayIcon: data.daily.data[0].icon,
+        weekDayPrecipProbability: data.daily.data[0].precipProbability,
+        weekDayTemperatureMin: data.daily.data[0].temperatureMin,
+        weekDayTemperatureMax: data.daily.data[0].temperatureMax
     };
 
     var postOptions = {
