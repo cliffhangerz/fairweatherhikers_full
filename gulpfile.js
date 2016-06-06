@@ -11,7 +11,7 @@ const mongoUri = 'mongodb://localhost/bands_test';
 
 var lintFiles = ['**/*.js', '!node_modules/**', '!build/**', '!**/*spec.js',
 '!**/*test.js', '!test/**bundle.**', '!*.conf.js'];
-var statFiles = ['./client/app/**/*.html'];
+var statFiles = ['./client/app/**/*.html', './client/app/images/**.*'];
 var children = [];
 
 gulp.task('webpack:dev', () => {
