@@ -5,7 +5,7 @@ var lon = 122.3493;
 var API_KEY = 'fdbc915b0ead7e316556b1de658613ef';
 var fs = require('fs');
 
-module.export = exports = function(lat,lon) {
+module.exports = exports = function(lat,lon) {
 
   var url = 'https://api.forecast.io/forecast/' + API_KEY + '/' + lat + ',-' + lon
 
