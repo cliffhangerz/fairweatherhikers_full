@@ -5,7 +5,7 @@ require('./services')(demoApp);
 require('./trails')(demoApp);
 require('./userprofile')(demoApp);
 require('./auth')(demoApp);
-// require('./forecast')(demoApp);
+require('./forecast')(demoApp);
 
 demoApp.config(['$routeProvider', function($rp) {
   $rp
@@ -13,6 +13,11 @@ demoApp.config(['$routeProvider', function($rp) {
       templateUrl: 'templates/trails/views/trails_view.html',
       controller: 'TrailsController',
       controllerAs: 'trailsctrl'
+    })
+    .when('/forecast', {
+      templateUrl: 'templates/forecast/views/forecast_view.html',
+      controller: 'ForecastController',
+      controllerAs: 'forecastctrl'
     })
     .when('/userprofile', {
       templateUrl: 'templates/userprofile/views/userprofile_view.html',
