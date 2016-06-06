@@ -1,4 +1,4 @@
 module.exports = exports = function(err, res) {
-  process.stdout.write(err);
+  throw(err);
   res.status(500).json({ msg: 'server error' });
 };
