@@ -1,12 +1,16 @@
 const angular = require('angular');
-const demoApp = angular.module('demoApp', [require('angular-route')]);
+const angmaps = require('angular-google-maps');
+
+const logger = require('angular-simple-logger');
+const lodash = require('lodash');
+
+const demoApp = angular.module('demoApp', [require('angular-route'), 'uiGmapgoogle-maps']);
 
 require('./services')(demoApp);
 require('./trails')(demoApp);
 require('./userprofile')(demoApp);
 require('./auth')(demoApp);
 require('./map')(demoApp);
-
 
 demoApp.config(['$routeProvider', function($rp) {
   $rp
@@ -43,4 +47,14 @@ demoApp.config(['$routeProvider', function($rp) {
     .otherwise({
       redirectTo: '/signup'
     });
+}]);
+
+
+
+demoApp.config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    key: 'AIzaSyAjHPG5y2dcj239xMNVoDzZKWRKO1Xi0oI',
+    v: '3.24',
+    libraries: 'weather,geometry,visualization'
+  });
 }]);

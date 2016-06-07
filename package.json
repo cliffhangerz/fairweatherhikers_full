@@ -45,17 +45,20 @@
   },
   "homepage": "https://github.com/cliffhangerz/fairweatherhikers_full",
   "dependencies": {
+    "angular-google-maps": "^2.3.3",
     "bcrypt": "latest",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "forecastio": "^1.0.1",
     "jsonwebtoken": "^6.1.1",
+    "lodash": "^4.13.1",
     "mongoose": "^4.4.14"
   },
   "devDependencies": {
     "angular": "1.5.6",
     "angular-mocks": "1.5.6",
     "angular-route": "^1.5.6",
+    "angular-simple-logger": "^0.1.7",
     "babel": "6.5.2",
     "babel-core": "6.9.1",
     "chai": "3.5.0",
