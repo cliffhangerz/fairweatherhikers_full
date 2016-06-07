@@ -1,11 +1,11 @@
 module.exports = function(app) {
-  app.directive('forecastWidgetItems', () => {
+  app.directive('forecastItemsWidget', () => {
     return {
       restrict: 'AC',
       repalce: true,
       require: '^ngController',
       transclude: true,
-      templateUrl: '/templates/forecast/views/forecast_view.html',
+      templateUrl: '/templates/forecast/directives/forecast_list.js',
       scope: {
         forecast: '='
       },

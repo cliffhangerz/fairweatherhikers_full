@@ -5,9 +5,9 @@
 	<title></title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body data-ng-app="demoApp" id="#top">
-  <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
-    <p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
+<body data-ng-app="demoApp">
+
+		<h1>Is this thing on?</h1>
     <main data-ng-view>
     </main>
   </div>
@@ -15,12 +15,4 @@
   <script src="./bundle.js"></script>
   <a target="_blank">
 </body>
-<footer>
-  <section>
-  <img class="footer-buttons" src="./about.png" />
-  <img class="footer-buttons" src="./facebook.png" />
-  <img class="footer-buttons" src="./tweet.png" />
-  <a href="#top" id="scrollup"><img class="footer-buttons" src="./up.png" /></a>
-  </section>
-</footer>
 </html>

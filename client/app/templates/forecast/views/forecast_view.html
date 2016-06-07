@@ -1,7 +1,9 @@
-<section>
+<section  data-ng-controller="ForecastController as forecastctrl"
+          data-bg-init="forecastctrl.getAll()">
   <ul id="forecastlist">
-    <div trail-list-item data-ng-repeat="forecast in forecastctrl.forecasts" data-forecast="forecast">
-      <h1>forecast_view</h1>
+    <div forecast-list data-ng-repeat="forecast in forecastctrl.forecasts" data-forecast="forecast">
+      <p>Forecast View HTML is loading</p>
+      <h1 data-forecast-tiems-widget></h1>
     </div>
   </ul>
 </section>
