@@ -1,13 +1,13 @@
-module.exports = (app) => {
+module.exports = function(app) {
   app.directive('forecastWidgetItems', () => {
     return {
       restrict: 'AC',
       repalce: true,
       require: '^ngController',
       transclude: true,
-      templateUrl: '/templates/forecast/directives/weekWidget.html',
+      templateUrl: '/templates/forecast/views/forecast_view.html',
       scope: {
-        forecast: '@'
+        forecast: '='
       },
       link: function(scope, element, attrs, controller){
         var actions = {
