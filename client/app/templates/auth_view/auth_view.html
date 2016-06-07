@@ -3,10 +3,10 @@
 
     <a data-ng-href="/#/{{authctrl.signup? 'signin':'signup'}}">{{authctrl.signup ? 'New User':'Existing User'}} || {{(authctrl.signup ? 'Existing User':'New User')}}</a>
     <label for="email">Email:</label>
-    <input type="text" required data-ng-model="authctrl.user.email">
+    <input type="text" required data-ng-model="authctrl.user.email" placeholder="email">
 
     <label for="password">Password:</label>
-    <input type="password" required data-ng-model="authctrl.user.password">
+    <input type="password" required data-ng-model="authctrl.user.password" placeholder="min. 8 chars">
 
     <label data-ng-if="authctrl.signup" for="confirmation">Confirmation:</label>
     <input data-ng-if="authctrl.signup" required type="password" data-ng-model="authctrl.user.confirmation">
