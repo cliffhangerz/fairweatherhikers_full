@@ -1,4 +1,4 @@
 module.exports = function(app) {
-  // require('./services')(app);
+  require('./directives')(app);
   require('./controllers')(app);
 };

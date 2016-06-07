@@ -1,12 +1,9 @@
-<section >
+<section>
+
   <p>in map view</p>
-  <div id="map">
-  </div>
 
-
-  <script id="/map_view.html" type="text/ng-template" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA5xSa31_0mOBivxb-uOtbn7FFQXmoTTU&callback=initMap"
->
-  console.log('wtf, mate!?');
-  </script>
+  <div id="map"></div>
+  <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+  <script>console.log('wtf, mate!?');</script>
 
 </section>
