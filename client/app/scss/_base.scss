@@ -5,10 +5,6 @@ html {
   -o-background-size: cover;
   background-size: cover;
  }
-.mt-rainier {
-  width: 100%;
-  height: 0 auto;
-}
 
 .auth-view {
   background-color: #4EBD51;
@@ -19,17 +15,4 @@ html {
     height: 15px;
     width: 80px;
   } 
-}
-
-.trail-list {
-  font-size: .8em;
-  background-color: rgba(164, 191, 208, 0.5);
-  height: 80%;
-  width: 25%;
-  overflow: scroll;
-  margin: 3% 0 0 3%;
-}
-
-.footer-buttons {
-  height: 40px;
 }
