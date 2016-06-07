@@ -1,0 +1,44 @@
+.trail-list {
+  font-size: .8em;
+  background-color: rgba(164, 191, 208, 0.5);
+  height: 80%;
+  width: 25%;
+  overflow: scroll;
+  margin: 3% 0 0 3%;
+}
+
+.about {
+  max-height: 40px;
+}
+
+.fave-button {
+  font-size: .8em;
+  height: 15px;
+  width: 70px;
+  text-align: left;
+  padding: 0;
+}
+
+#social-links {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 7;
+  li a {
+    display: inline-block;
+  }
+  li a img {
+    display: inline-block;
+    max-width:40px;
+    padding: 0;
+    -webkit-transition:  background .2s ease-in-out;
+    -moz-transition:  background .2s ease-in-out;
+    -o-transition:  background .2s ease-in-out;
+    transition:  background .2s ease-in-out;
+  }
+  li a:hover img {
+  background: rgba(0, 0, 0, .2);
+  }
+}
