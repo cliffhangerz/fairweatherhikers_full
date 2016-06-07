@@ -23,7 +23,9 @@ demoApp.config(['$routeProvider', function($rp) {
     .when('/forecast', {
       templateUrl: 'templates/forecast/views/forecast_view.html',
       controller: 'ForecastController',
-      controllerAs: 'forecastctrl'
+      controllerAs: 'forecastctrl',
+      controllerAs: 'trailsctrl'
+    })
     .when('/map', {
       templateUrl: 'templates/maps/views/map_view.html',
       controller: 'MapController',
@@ -53,6 +55,7 @@ demoApp.config(['$routeProvider', function($rp) {
       redirectTo: '/signup'
     });
 }]);
+
 
 demoApp.config(['uiGmapGoogleMapApiProvider', function(uiGmapGoogleMapApiProvider) {
   uiGmapGoogleMapApiProvider.configure({
