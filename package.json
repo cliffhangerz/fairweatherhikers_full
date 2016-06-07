@@ -47,22 +47,25 @@
   },
   "homepage": "https://github.com/cliffhangerz/fairweatherhikers_full",
   "dependencies": {
+    "angular": "1.5.6",
+    "angular-route": "^1.5.6",
+    "angular-google-maps": "^2.3.3",
     "bcrypt": "latest",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "forecastio": "^1.0.1",
     "jsonwebtoken": "^6.1.1",
     "mongoose": "^4.4.14",
-    "superagent": "^2.0.0"
+    "lodash": "^4.13.1"
   },
   "devDependencies": {
-    "angular": "1.5.6",
     "angular-mocks": "1.5.6",
-    "angular-route": "^1.5.6",
+    "angular-simple-logger": "^0.1.7",
     "babel": "6.5.2",
     "babel-core": "6.9.1",
     "chai": "3.5.0",
     "chai-http": "2.0.1",
+    "glob": "^7.0.3",
     "gulp": "3.9.1",
     "gulp-eslint": "2.0.0",
     "gulp-minify-css": "1.2.4",
@@ -75,6 +78,7 @@
     "karma": "0.13.22",
     "karma-chrome-launcher": "1.0.1",
     "karma-jasmine": "1.0.2",
+    "minimatch": "^3.0.0",
     "mocha": "^2.4.5",
     "webpack-stream": "3.2.0"
   }
