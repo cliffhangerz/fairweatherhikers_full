@@ -5,9 +5,9 @@
 	<title></title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body data-ng-app="demoApp" id="#top">
+<body data-ng-app="demoApp">
   <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
-    <p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
+    <p id="#top" data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
     <main data-ng-view>
     </main>
   </div>
@@ -17,10 +17,12 @@
 </body>
 <footer>
   <section>
-  <img class="footer-buttons" src="./about.png" />
-  <img class="footer-buttons" src="./facebook.png" />
-  <img class="footer-buttons" src="./tweet.png" />
-  <a href="#top" id="scrollup"><img class="footer-buttons" src="./up.png" /></a>
+  <ul id="social-links">
+  <li><a style="background-color: #3c5a96;" href="" target="_blank"><img class="about" src="./about.png" alt="" /></a></li>
+  <li><a style="background-color: #1dadeb;" href="http://facebook.com" target="_blank"><img src="./facebook.png" alt="" /></a></li>
+  <li><a style="background-color: #1178b3;" href="http://twitter.com" target="_blank"><img src="./tweet.png" alt="" /></a></li>
+  <li><a style="background-color: #1178b3;" href="#top" target="_blank"><img src="./up.png" alt="" /></a></li>
+</ul>
   </section>
 </footer>
 </html>
