@@ -25,7 +25,7 @@ demoApp.config(['$routeProvider', function($rp) {
       controllerAs: 'forecastctrl'
     })
     .when('/map', {
-      templateUrl: 'templates/maps/views/map_view.html',
+      //templateUrl: 'templates/maps/views/map_view.html',
       controller: 'MapController',
       controllerAs: 'mapctrl'
     })
