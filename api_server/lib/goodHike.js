@@ -13,11 +13,11 @@ module.exports = exports = function(data, res, cb) {
 
   trailArray.forEach((trail) => {
     var goodHike = {};
-    var trailLoc = trail.loc;
+    var trailName = trail.trailName;
     var trailLon = trail.lon;
     var trailLat = trail.lat;
 
-    goodHike.trailName = trailLoc;
+    goodHike.trailName = trailName;
     goodHike.weatherForecast = [];
 
     var forecastIo = new ForecastIo('ce1e9e7c47068378251586a90ecb14cd');
@@ -34,7 +34,7 @@ module.exports = exports = function(data, res, cb) {
         var rainChance = Math.round(rainChanceString);
         goodHike.weatherForecast[i] = rainChance;
 
-        console.log(trailLoc + ' rain chance for ' + date + ' = ' +
+        console.log(trailName + ' rain chance for ' + date + ' = ' +
           rainChance + ' %');
         if (i === 2) {
           counter++;
