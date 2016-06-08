@@ -17,8 +17,8 @@
     <h2 class="weather">MY WEATHER TEMP HERE</h2>
   </div>
 
-	<div data-ng-controller="MapController as mapctrl" class="map-div">
-		<div data-ng-view></div>
+	<div data-ng-controller="MapController as mapctrl" class="map-div" id="map">
+	    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
 	</div>
 
   <section id="favorite">
