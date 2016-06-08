@@ -1,38 +1,38 @@
-http POST localhost:3000/api/trail loc="Commonwealth Basin - Red Mtn. Pass" lat=47.4605 lon=121.3976 difficulty=hard length=7.2 time=5.5
-'{"loc":"Commonwealth Basin - Red Mtn. Pass", "lat":47.4605, "lon":121.3976, "difficulty":"hard", "length":"7.2", "time":5.5}'
+http POST localhost:3000/api/trail trailName="Commonwealth Basin - Red Mtn. Pass" lat=47.4605 lon=121.3976 difficulty=hard length=7.2 time=5.5
+'{"trailName":"Commonwealth Basin - Red Mtn. Pass", "lat":47.4605, "lon":121.3976, "difficulty":"hard", "length":"7.2", "time":5.5}'
 
-http POST localhost:3000/api/trail loc="Blanca Lake Trail" lat=47.9346 lon=121.3432 difficulty=hard length=7.5 time=4.8
-'{"loc":"Blanca Lake Trail", "lat":47.9346, "lon":121.3432, "difficulty":"hard", "length":"7.5", "time":4.8}'
+http POST localhost:3000/api/trail trailName="Blanca Lake Trail" lat=47.9346 lon=121.3432 difficulty=hard length=7.5 time=4.8
+'{"trailName":"Blanca Lake Trail", "lat":47.9346, "lon":121.3432, "difficulty":"hard", "length":"7.5", "time":4.8}'
 
-http POST localhost:3000/api/trail loc="Big Heart Lake Trail" lat=47.5846 lon=121.3195 difficulty=hard length=14 time=8.5
-'{"loc":"Big Heart Lake Trail", "lat":47.5846, "lon":121.3195, "difficulty":"hard", "length":"14", "time":8.5}'
+http POST localhost:3000/api/trail trailName="Big Heart Lake Trail" lat=47.5846 lon=121.3195 difficulty=hard length=14 time=8.5
+'{"trailName":"Big Heart Lake Trail", "lat":47.5846, "lon":121.3195, "difficulty":"hard", "length":"14", "time":8.5}'
 
-http POST localhost:3000/api/trail loc="Bessemer Mountain Trail" lat=47.5498 lon=121.6141 difficulty=hard length=13 time=5.8
-'{"loc":"Bessemer Mountain Trail", "lat":47.5498, "lon":121.6141, "difficulty":"hard", "length":"13", "time":5.8}'
+http POST localhost:3000/api/trail trailName="Bessemer Mountain Trail" lat=47.5498 lon=121.6141 difficulty=hard length=13 time=5.8
+'{"trailName":"Bessemer Mountain Trail", "lat":47.5498, "lon":121.6141, "difficulty":"hard", "length":"13", "time":5.8}'
 
-http POST localhost:3000/api/trail loc="Amabilis Mountain Snowshoe" lat=47.2933 lon=121.2612 difficulty=hard length=9.5 time=5
-'{"loc":"Amabilis Mountain Snowshoe", "lat":47.2933, "lon":121.2612, "difficulty":"hard", "length":"9.5", "time":5}'
+http POST localhost:3000/api/trail trailName="Amabilis Mountain Snowshoe" lat=47.2933 lon=121.2612 difficulty=hard length=9.5 time=5
+'{"trailName":"Amabilis Mountain Snowshoe", "lat":47.2933, "lon":121.2612, "difficulty":"hard", "length":"9.5", "time":5}'
 
-http POST localhost:3000/api/trail loc="Bearhead Mountain Trail" lat=47.0235 lon=121.8158 difficulty=moderate length=6 time=3
+http POST localhost:3000/api/trail trailName="Bearhead Mountain Trail" lat=47.0235 lon=121.8158 difficulty=moderate length=6 time=3
 
-http POST localhost:3000/api/trail loc="Bare Mountain Trail" lat=47.6494 lon=121.5075 difficulty=moderate length=8.2 time=4
+http POST localhost:3000/api/trail trailName="Bare Mountain Trail" lat=47.6494 lon=121.5075 difficulty=moderate length=8.2 time=4
 
-http POST localhost:3000/api/trail loc="Bander Mountain Trail" lat=47.4154 lon=121.5381 difficulty=moderate length=6.8 time=4
+http POST localhost:3000/api/trail trailName="Bander Mountain Trail" lat=47.4154 lon=121.5381 difficulty=moderate length=6.8 time=4
 
-http POST localhost:3000/api/trail loc="Annette Lake Trail" lat=47.3927 lon=121.4744 difficulty=moderate length=7 time=3.85
+http POST localhost:3000/api/trail trailName="Annette Lake Trail" lat=47.3927 lon=121.4744 difficulty=moderate length=7 time=3.85
 
-http POST localhost:3000/api/trail loc="15 Mile Creek - Tiger Mountain" lat=47.4933 lon=121.973 difficulty=moderate length=10.5 time=3.8
+http POST localhost:3000/api/trail trailName="15 Mile Creek - Tiger Mountain" lat=47.4933 lon=121.973 difficulty=moderate length=10.5 time=3.8
 
-http POST localhost:3000/api/trail loc="Boardman and Evan Lake Trail" lat=48.0257 lon=121.6870 difficulty=easy length=2 time=1.25
+http POST localhost:3000/api/trail trailName="Boardman and Evan Lake Trail" lat=48.0257 lon=121.6870 difficulty=easy length=2 time=1.25
 
-http POST localhost:3000/api/trail loc="BigFour Ice Caves Trail" lat=48.0533 lon=121.5196 difficulty=easy length=2.5 time=3
+http POST localhost:3000/api/trail trailName="BigFour Ice Caves Trail" lat=48.0533 lon=121.5196 difficulty=easy length=2.5 time=3
 
-http POST localhost:3000/api/trail loc="Barlow Point Trail" lat=48.0373 lon=121.4432 difficulty=easy length=2.2 time=1.25
+http POST localhost:3000/api/trail trailName="Barlow Point Trail" lat=48.0373 lon=121.4432 difficulty=easy length=2.2 time=1.25
 
-http POST localhost:3000/api/trail loc="Barclay Lake Trail" lat=47.784 lon=121.425 difficulty=easy length=4.4 time=2
+http POST localhost:3000/api/trail trailName="Barclay Lake Trail" lat=47.784 lon=121.425 difficulty=easy length=4.4 time=2
 
-http POST localhost:3000/api/trail loc="Ashland Lakes Trail" lat=48.0280 lon=121.7285 difficulty=easy length=5.5 time=3.25
+http POST localhost:3000/api/trail trailName="Ashland Lakes Trail" lat=48.0280 lon=121.7285 difficulty=easy length=5.5 time=3.25
 
-http POST localhost:3000/api/trail loc="Top Gun" lat=39.2530 lon=118.4210 difficulty=moderate length=14 time=1.21
+http POST localhost:3000/api/trail trailName="Top Gun" lat=39.2530 lon=118.4210 difficulty=moderate length=14 time=1.21
 
-'{"loc":"Top Gun - Fallon, Nevada", "lat":39.2530, "lon":118.4210, "difficulty":"moderate", "length":"14", "time":1.21}'
+'{"trailName":"Top Gun - Fallon, Nevada", "lat":39.2530, "lon":118.4210, "difficulty":"moderate", "length":"14", "time":1.21}'

@@ -1,6 +1,6 @@
 <li>
   <ng-transclude></ng-transclude>
-  <span >{{trail.loc}} is approximately {{trail.length}} long and rated {{trail.difficulty}}.</span>
+  <span >{{trail.trailName}} is approximately {{trail.length}} long and rated {{trail.difficulty}}.</span>
   <button data-ng-if="!trail.editing" data-ng-click="trail.editing = true">Edit</button>
   <button data-ng-click="remove(trail)">Remove Trail</button>
   <button type="submit" data-ng-click="create(trail)">Add Favorite Trail</button>
