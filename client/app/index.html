@@ -7,7 +7,7 @@
 
 </head>
 <body data-ng-app="demoApp">
-	
+
   <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
     <p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
   </div>
