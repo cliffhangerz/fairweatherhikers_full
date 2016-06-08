@@ -1,4 +1,3 @@
-
 module.exports = function(app) {
   app.controller('MapController', function($scope, uiGmapGoogleMapApi) {
     var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
@@ -38,46 +37,67 @@ module.exports = function(app) {
         editable: false, // optional: defaults to false
         visible: true, // optional: defaults to true
         control: {}
-
       }
     ];
 
-    var createRandomMarker = function(i, bounds, idKey) {
-      var lat_min = bounds.southwest.latitude,
-        lat_range = bounds.northeast.latitude - lat_min,
-        lng_min = bounds.southwest.longitude,
-        lng_range = bounds.northeast.longitude - lng_min;
+    var trailList = [
+      ['UFO on stilts', 47.6205063, -122.3493, 1],
+      ['Stately Troy Manor', 47.547284, -122.389856, 2],
+      ['Rattlesnake Ledge', 47.435545, -121.771740, 3],
+      ['Wallace Falls', 47.867065, -121.678380, 4],
+      ['Bridal Veil Falls', 47.809015, -121.573967, 5]
+    ];
 
-      if (idKey == null) {
-        idKey = "id";
-      }
+    // shape defines the clickable area
+    // var shape = {
+    //   coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    //   type: 'poly'
+    // };
 
-      var latitude = lat_min + (Math.random() * lat_range);
-      var longitude = lng_min + (Math.random() * lng_range);
-      var ret = {
-        latitude: latitude,
-        longitude: longitude,
-        title: 'm' + i
+    $scope.markertest = {
+          id: 0,
+          coords: {
+            latitude: 47.6205063,
+            longitude: -122.3493
+          },
+          options: { draggable: true },
+          events: {
+            dragend: function (marker, eventName, args) {
+              $log.log('marker dragend');
+              var lat = marker.getPosition().lat();
+              var lon = marker.getPosition().lng();
+              $log.log(lat);
+              $log.log(lon);
+
+              $scope.marker.options = {
+                draggable: true,
+                labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
+                labelAnchor: "100 0",
+                labelClass: "marker-labels"
+              };
+            }
+          }
+        };
+
+    $scope.trailMarkers = [];
+
+    for (var i = 0; i < trailList.length; i++) {
+      var trail = trailList[i];
+      var marker = {
+        title: trail[0],
+        latitude: trail[1],
+        longitude: trail[2],
+        options: { draggable: false },
+        id: i
       };
-      ret[idKey] = i;
-      return ret;
-    };
-    $scope.randomMarkers = [];
-    // Get the bounds from the map once it's loaded
-    $scope.$watch(function() {
-      return $scope.map.bounds;
-    }, function(nv, ov) {
-      // Only need to regenerate once
-      if (!ov.southwest && nv.southwest) {
-        var markers = [];
-        for (var i = 0; i < 50; i++) {
-          markers.push(createRandomMarker(i, $scope.map.bounds))
-        }
-        $scope.randomMarkers = markers;
-      }
-    }, true);
-
-
+      $scope.trailMarkers.push(marker);
+    }
+    // TODO: find a way to capture the attributes below and port into a
+    //       descriptor flag when you mouseover a trail marker
+    // difficulty: { type: String },
+    // length: { type: String },
+    // time: { type: Number }
+    $scope.map.trailMarkers = $scope.trailMarkers;
 
     uiGmapGoogleMapApi.then(function(maps) {
     });
