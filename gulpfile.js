@@ -50,24 +50,24 @@ gulp.task('lint:dev', () => {
     .pipe(eslint.format());
 });
 
-// gulp.task('webpack:test', () => {
-//   return gulp.src('test/unit/entry.js')
-//     .pipe(webpack({
-//       devtool: 'source-map',
-//       output: {
-//         filename: 'bundle.js'
-//       },
-//       module: {
-//         loaders: [
-//           {
-//             test: /\.html$/,
-//             loader: 'html'
-//           }
-//         ]
-//       }
-//     }))
-//     .pipe(gulp.dest('test/'));
-// });
+gulp.task('webpack:test', () => {
+  return gulp.src('client/test/unit/entry.js')
+    .pipe(webpack({
+      devtool: 'source-map',
+      output: {
+        filename: 'bundle.js'
+      },
+      module: {
+        loaders: [
+          {
+            test: /\.html$/,
+            loader: 'html'
+          }
+        ]
+      }
+    }))
+    .pipe(gulp.dest('test/'));
+});
 
 // gulp.task('webpack:protractor', () => {
 //   gulp.src('test/integration/**.js')

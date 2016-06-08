@@ -2,7 +2,7 @@ var angular = require('angular');
 
 describe('handleError service', function() {
   var handleError;
-  beforeEach(angular.mock.module('angularApp'));
+  beforeEach(angular.mock.module('demoApp'));
 
   it('should return a function', angular.mock.inject(function(handleError) {
     expect(typeof handleError).toBe('function');
