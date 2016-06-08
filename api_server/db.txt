@@ -1,6 +1,10 @@
 http POST localhost:3000/api/trail trailName="Commonwealth Basin - Red Mtn. Pass" lat=47.4605 lon=121.3976 difficulty=hard length=7.2 time=5.5
 '{"trailName":"Commonwealth Basin - Red Mtn. Pass", "lat":47.4605, "lon":121.3976, "difficulty":"hard", "length":"7.2", "time":5.5}'
 
+http POST localhost:3000/api/trail trailName="Default" lat=47.6205 lon=122.3493 difficulty=hard length=0.114 time=0.3
+'{"trailName":"Default", "lat":47.6205, "lon":122.3493, "difficulty":"hard", "length":"0.114", "time":0.3}'
+
+
 http POST localhost:3000/api/trail trailName="Blanca Lake Trail" lat=47.9346 lon=121.3432 difficulty=hard length=7.5 time=4.8
 '{"trailName":"Blanca Lake Trail", "lat":47.9346, "lon":121.3432, "difficulty":"hard", "length":"7.5", "time":4.8}'
 

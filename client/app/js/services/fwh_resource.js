@@ -1,3 +1,4 @@
+const _ = require('lodash');
 module.exports = function(app) {
   app.factory('fwhResource', ['$http', 'handleError', function($http, handleError) {
     var Resource = function(resourceArr, errsArr, baseUrl, options) {
@@ -12,9 +13,16 @@ module.exports = function(app) {
       return $http.get(this.url)
         .then((res) => {
           this.data.splice(0);
-          for(var i = 0; i < res.data.length; i++)
+          for (var i = 0; i < res.data.length && i < 10; i++) {
             this.data.push(res.data[i]);
-        }, handleError(this.errors, this.options.errMsgs.getAll ||'Could not GET resource.'))
+          }
+          for (var j = 0; j < this.data.length && i < 10; j++) {
+            $http.get('http://localhost:3000/api/forecast?lat=' + res.data[j].lat.toFixed(1) + '&lon=' + res.data[j].lon.toFixed(1))
+              .then((weather) => {
+                console.log(weather.data);
+              })
+          }
+        }, handleError(this.errors, this.options.errMsgs.getAll || 'Could not GET resource.'))
     };
 
     Resource.prototype.create = function(resource) {
@@ -26,7 +34,7 @@ module.exports = function(app) {
 
     Resource.prototype.update = function(resource) {
       return $http.put(this.url + '/' + resource._id, resource)
-        .catch(handleError(this.errors, this.options.errMsgs.update ||'Could not UPDATE resource.'));
+        .catch(handleError(this.errors, this.options.errMsgs.update || 'Could not UPDATE resource.'));
     };
 
     Resource.prototype.remove = function(resource) {
