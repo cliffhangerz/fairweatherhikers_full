@@ -17,9 +17,9 @@
     <h2 class="weather">MY WEATHER TEMP HERE</h2>
   </div>
 
-  <div class="map-div">
-    <div>GOOGLE MAP</div>
-  </div>
+	<div data-ng-controller="MapController as mapctrl" class="map-div">
+		<div data-ng-view></div>
+	</div>
 
   <section id="favorite">
     <h2>FAVORITE TRAILS</h2>
