@@ -51,7 +51,7 @@ gulp.task('lint:dev', () => {
 });
 
 gulp.task('webpack:test', () => {
-  return gulp.src('client/test/unit/entry.js')
+  return gulp.src('client/test/unit/test_entry.js')
     .pipe(webpack({
       devtool: 'source-map',
       output: {
