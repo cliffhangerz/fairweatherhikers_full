@@ -51,7 +51,7 @@ gulp.task('lint:dev', () => {
 });
 
 gulp.task('webpack:test', () => {
-  return gulp.src('client/test/unit/entry.js')
+  return gulp.src('client/test/unit/test_entry.js')
     .pipe(webpack({
       devtool: 'source-map',
       output: {
@@ -79,7 +79,7 @@ gulp.task('webpack:test', () => {
 //     }))
 //     .pipe(gulp.dest('./test'));
 // });
-
+//
 // gulp.task('mongoDB:test', (done) => {
 //   children.push(cp.spawn('mongod'));
 //   setTimeout(done, 1000);
@@ -112,10 +112,7 @@ gulp.task('webpack:test', () => {
 //       killcp();
 //     });
 // });
-
-// gulp.task('sass:watch', () => {
-//   gulp.watch('./*scss', ['sass:dev']);
-// });
+//
 // gulp.task('test', ['protractor:test', 'webpack:protractor']);
 // gulp.task('default', ['build', 'lint', 'test']);
 gulp.task('build', ['webpack:dev', 'static:dev', 'sass:dev']);
