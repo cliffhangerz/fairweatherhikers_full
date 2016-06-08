@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body data-ng-app="demoApp">
+	<div data-ng-controller="ForecastController as forecastctrl">
+		<h1>Is this thing on?</h1>
+		<h1 data-ng-init="forecastctrl.getAll()"></h1>
+    <main data-ng-view>
+    </main>
+  </div>
+
+  <script src="./bundle.js"></script>
+  <a target="_blank">
+</body>
+</html>

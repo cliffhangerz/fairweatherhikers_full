@@ -5,7 +5,7 @@ module.exports = function(app) {
       repalce: true,
       require: '^ngController',
       transclude: true,
-      templateUrl: '/templates/forecast/directives/forecast_list.js',
+      templateUrl: '/templates/forecast/directives/forecast_list.html',
       scope: {
         forecast: '='
       },
