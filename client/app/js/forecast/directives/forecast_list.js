@@ -1,20 +1,13 @@
-module.exports = function(app) {
+module.exports = (app) => {
   app.directive('forecastItemsWidget', () => {
     return {
-      restrict: 'AC',
-      repalce: true,
+      restrict: 'EAC',
+      replace: true,
       require: '^ngController',
       transclude: true,
-      templateUrl: '/templates/forecast/directives/forecast_list.html',
+      templateUrl: '/templates/forecast/directives/mainWidget.html',
       scope: {
         forecast: '='
-      },
-      link: function(scope, element, attrs, controller){
-        var actions = {
-          update: controller.updateForecast,
-          create: controller.createForecast
-        };
-        scope.save = actions[scope.action];
       }
     };
   });
