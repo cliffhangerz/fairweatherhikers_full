@@ -1,6 +1,4 @@
-<section>
-
-
+<div id="map">
   <ui-gmap-google-map
     center="map.center"
     zoom="map.zoom"
@@ -20,28 +18,12 @@
       clickable="c.clickable"
       control="c.control">
     </ui-gmap-circle>
+
+    <ui-gmap-markers
+      models="randomMarkers"
+      idkey="loc"
+      coords="'self'"
+      icon="'icon'">
+    </ui-gmap-markers>
   </ui-gmap-google-map>
-
-
-
-
-
-
-  <div id="map">
-    <ui-gmap-google-map
-      center='map.center'
-      zoom='map.zoom'>
-    </ui-gmap-google-map>
-
-    <ui-gmap-circle center='map.center'
-                radius='{80450}'
-                fill='{expression}'
-                stroke='{#000000}'
-                visible='{true}'
-        >
-
-</ui-gmap-circle>
-
-  </div>
-
-</section>
+</div>
