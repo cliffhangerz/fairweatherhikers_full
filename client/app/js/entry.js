@@ -27,7 +27,7 @@ demoApp.config(['$routeProvider', function($rp) {
       controllerAs: 'trailsctrl'
     })
     .when('/map', {
-      templateUrl: 'templates/maps/views/map_view.html',
+      //templateUrl: 'templates/maps/views/map_view.html',
       controller: 'MapController',
       controllerAs: 'mapctrl'
     })
