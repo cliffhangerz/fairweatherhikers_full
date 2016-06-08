@@ -1,7 +1,7 @@
 <section data-ng-init="globalAuth.getEmail()">
   <div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
     <userprofile-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-    <li>{{trail.trailName}} || {{trail.length}} || rating: {{trail.difficulty}} || <button class="fave-button" data-ng-click="addFavorite">Add to Faves</button></li>
+    <li>{{trail.trailName}} || {{trail.distance}} || rating: {{trail.difficulty}} || <button class="fave-button" data-ng-click="addFavorite">Add to Faves</button></li>
   </div>
 </section>
 
@@ -9,6 +9,6 @@
   <h2>FAVORITE TRAILS</h2>
   <div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
   <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-  <li>{{trail.trailName}} | {{trail.length}} miles | rating: {{trail.difficulty}}</li>
+  <li>{{trail.trailName}} | {{trail.distance}} miles | rating: {{trail.difficulty}}</li>
   </div>
 </section> -->

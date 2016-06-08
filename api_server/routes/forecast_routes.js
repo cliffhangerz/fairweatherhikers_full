@@ -8,7 +8,7 @@ var forecastRouter = module.exports = exports = Router();
 
 
 forecastRouter.get('/forecast', (req, res) => {
-  if(!req.query.lon.match(/-/)) req.query.lon = '-' + req.query.lon;
+  // if(!req.query.lon.match(/-/)) req.query.lon = '-' + req.query.lon;
   Forecast.find(req.query, (err, data) => {
     console.log("inside forecast_routes");
     console.log('req.query:', req.query);

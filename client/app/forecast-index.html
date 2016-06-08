@@ -6,9 +6,9 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body data-ng-app="demoApp">
-
-  <div data-ng-controller="ForecastController as forecastctrl" data-ng-init="forecastctrl.getAll()">
-    <h1> {{forecastctrl.forecast}} </h1>
+	<div data-ng-controller="ForecastController as forecastctrl">
+		<h1>Is this thing on?</h1>
+		<h1 data-ng-init="forecastctrl.getAll()"></h1>
     <main data-ng-view>
     </main>
   </div>
