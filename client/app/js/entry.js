@@ -52,7 +52,7 @@ demoApp.config(['$routeProvider', function($rp) {
       controllerAs: 'authctrl'
     })
     .otherwise({
-      redirectTo: '/signup'
+      redirectTo: '/signin'
     });
 }]);
 
