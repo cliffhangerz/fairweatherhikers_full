@@ -49,7 +49,7 @@ describe('Trail Routing test', () => {
     request('localhost:' + port)
     .post('/api/trails/')
     .set('token', this.token)
-    .send({ loc: 'Test Trail',
+    .send({ trailName: 'Test Trail',
             lat: 47.2110,
             lon: 122.3220,
             difficulty: 'easy',
@@ -59,7 +59,7 @@ describe('Trail Routing test', () => {
     .end((err, res) => {
       expect(err).to.eql(null);
       expect(res.status).to.eql(200);
-      expect(res.body.loc).to.eql('Test Trail');
+      expect(res.body.trailName).to.eql('Test Trail');
       expect(res.body.lat).to.eql(47.2110);
       expect(res.body.lon).to.eql(122.3220);
       expect(res.body.difficulty).to.eql('easy');
@@ -71,7 +71,7 @@ describe('Trail Routing test', () => {
 
   describe('Tests that need data in the database', () => {
     beforeEach((done) => {
-      var newTrail = new Trail({ loc: 'Appalachian' });
+      var newTrail = new Trail({ trailName: 'Appalachian' });
       newTrail.save((err, data) => {
         if (err) return errorHandler(err, data);
         this.testTrail = data;
@@ -89,7 +89,7 @@ describe('Trail Routing test', () => {
       request('localhost:' + port)
       .put('/api/trails/' + this.testTrail._id)
       .set('token', this.token)
-      .send({ loc: 'Appalachian',
+      .send({ trailName: 'Appalachian',
               lat: 47.13245,
               lon: 123.6370,
               dificulty: 'easy',

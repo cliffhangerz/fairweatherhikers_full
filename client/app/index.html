@@ -25,7 +25,7 @@
     <h2>FAVORITE TRAILS</h2>
     <div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
     <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-    <li>{{trail.loc}} | {{trail.length}} miles | rating: {{trail.difficulty}}</li>
+    <li>{{trail.trailName}} | {{trail.length}} miles | rating: {{trail.difficulty}}</li>
     </div>
   </section>
 
@@ -33,7 +33,7 @@
     <h2>ALL TRAILS</h2>
     <div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
     <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-    <li>{{trail.loc}} | {{trail.length}} miles | rating: {{trail.difficulty}}</li>
+    <li>{{trail.trailName}} | {{trail.length}} miles | rating: {{trail.difficulty}}</li>
     </div>
   </aside>
 
