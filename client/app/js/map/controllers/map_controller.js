@@ -55,7 +55,22 @@ module.exports = function(app) {
           latitude: trailArray[i].lat,
           longitude: trailArray[i].lon,
           options: { draggable: false },
-          id: i
+          id: i,
+          hikeDist: trailArray[i].hikeDistance,
+
+          events: {
+            mouseover: function (markere, eventName, args) {
+              console.log('marker mouseover');
+              console.log(markere);
+              $scope.hikeDist = markere.model.hikeDist;
+              $scope.trailName = markere.model.title;
+               $scope.coords = {
+                latitude: markere.model.latitude,
+                longitude: markere.model.longitude
+              };
+              $scope.windowshow = true;
+           }
+         }
         };
         $scope.trailMarkers.push(marker);
       }
