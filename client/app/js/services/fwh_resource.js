@@ -46,13 +46,7 @@ module.exports = function(app) {
       return $http.put(this.url + '/' + resource._id, resource)
         .catch(handleError(this.errors, this.options.errMsgs.update || 'Could not UPDATE resource.'));
     };
-
-    Resource.prototype.remove = function(resource) {
-      return $http.delete(this.url + '/' + resource._id)
-        .then(() => {
-          this.data.splice(this.data.indexOf(resource), 1);
-        }, handleError(this.errors, this.options.errMsgs.remove || 'Could not REMOVE resource.'));
-    };
-    return Resource;
+      }
+    );
   }]);
 };
