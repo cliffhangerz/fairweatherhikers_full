@@ -19,8 +19,8 @@
 
 	<div>
 		<div class="forecast-list" data-ng-controller="TrailsController as trailsctrl">
-			<main-widget data-ng-repeat="trail in trailsctrl.trails | filter:{trailName: 'Ashland Lakes'}: true" data-trail="trail">
-				<li class="weather">{{ trail.trailName }} - {{ trail.weather.data[0].precipProbability }}</li>
+			<main-widget data-trail="trail">
+				<li class="weather" id="todayTemp" ng-bind-html="todayTempHTML"></li>
 			</main-widget>
 			</div>
 		</div>
@@ -40,8 +40,8 @@
   <aside id="all-trails">
     <h2>ALL TRAILS</h2>
     <div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
-    <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-    <li>{{trail.trailName}} | {{trail.distance}} miles | rating: {{trail.difficulty}} </li>
+    <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails"  data-trail="trail">
+    <li><button data-ng-click="trailsctrl.getClickedName(trail)">{{trail.trailName}}</button> | {{trail.distance}} miles | rating: {{trail.difficulty}} </li>
     </div>
   </aside>
 
