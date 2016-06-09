@@ -21,11 +21,11 @@
 	</header>
 
 	<section id="pagewrap">
-		<div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
+		<!-- <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
 			<p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
 			<main data-ng-view>
 			</main>
-		</div>
+		</div> -->
 	<div>
 		<div class="forecast-list" data-ng-controller="TrailsController as trailsctrl">
 			<main-widget data-trail="trail">
@@ -38,16 +38,12 @@
 		<div googlemapsdirective></div>
 	</div>
 
-	<!-- <section id="favorite">
-	    <h2>FAVORITE TRAILS</h2>
-	    <div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
-	    <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-	    <li>{{trail.trailName}} | {{trail.length}} miles | rating: {{trail.difficulty}}</li>
-	    </div>
-	  </section> -->
+	<div data-ng-controller="UserprofileController as userprofilectrl">
+		<div userprofileListItem></div>
+	</div>
 
 	<aside id="all-trails">
-		<h2>ALL TRAILS</h2>
+		<h2>FAIR WEATHER TRAILS</h2>
 		<div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
 			<default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
 				<li>
