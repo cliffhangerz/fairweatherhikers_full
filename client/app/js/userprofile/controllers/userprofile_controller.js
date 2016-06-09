@@ -2,7 +2,8 @@ const angular = require('angular'); // eslint-disable-line
 var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
-  app.controller('UserprofileController', ['fwhResource', function(Resource) {
+  app.controller('UserprofileController', ['$rootScope', 'fwhResource', function($rs, Resource) {
+    $rs.hide = true;
     this.userprofile = [];
     this.errors = [];
     var remote = new Resource(this.userprofile, this.errors, baseUrl + '/api/userprofile', {errMsgs: {getAll: 'User profile Error.'}});
