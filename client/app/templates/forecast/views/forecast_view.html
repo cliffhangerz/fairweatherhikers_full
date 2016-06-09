@@ -1,6 +1,8 @@
-<section>
+<section data-ng-init="forecastctrl.getAll()">
   <ul id="forecastlist">
-    <div trail-list-item data-ng-repeat="forecast in forecastctrl.forecasts" data-forecast="forecast">
-    </div>
+    <forecast-list data-ng-repeat="forecast in forecastctrl.forecasts" data-forecast="forecast">
+      <p>Forecast View HTML is loading</p>
+      <h1 data-forecast-items-widget></h1>
+    </forecast-list>
   </ul>
 </section>

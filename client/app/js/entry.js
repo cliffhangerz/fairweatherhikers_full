@@ -1,6 +1,5 @@
 const angular = require('angular');
 const angmaps = require('angular-google-maps');
-
 const logger = require('angular-simple-logger');
 const lodash = require('lodash');
 
@@ -23,8 +22,7 @@ demoApp.config(['$routeProvider', function($rp) {
     .when('/forecast', {
       templateUrl: 'templates/forecast/views/forecast_view.html',
       controller: 'ForecastController',
-      controllerAs: 'forecastctrl',
-      controllerAs: 'trailsctrl'
+      controllerAs: 'forecastctrl'
     })
     .when('/map', {
       //templateUrl: 'templates/maps/views/map_view.html',
