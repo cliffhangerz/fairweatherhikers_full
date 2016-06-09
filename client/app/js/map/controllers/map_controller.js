@@ -1,8 +1,14 @@
+var baseUrl = require('../../config').baseUrl;
+
 module.exports = function(app) {
-  app.controller('MapController', function($scope, uiGmapGoogleMapApi) {
+  app.controller('MapController', ['mapResource', '$scope', 'uiGmapGoogleMapApi', function(mapResource, $scope, uiGmapGoogleMapApi) {
+
+    var trailArray = mapResource.get();
+                              // Seattle Center is at the following lat, long
     var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
     var centerLongitude = document.getElementById('startPointLon') || -122.3493;
     var zoom = document.getElementById('startZoom') || 7;
+                                                      // 50 miles = 80450 meters
     var drivingRadius = document.getElementById('drivingRadius') || 80450;
 
     $scope.map = {
@@ -40,174 +46,38 @@ module.exports = function(app) {
       }
     ];
 
-    var trailList = [
-      ['UFO on stilts', 47.6205063, -122.3493, 1],
-      ['Stately Troy Manor', 47.547284, -122.389856, 2],
-      ['Rattlesnake Ledge', 47.435545, -121.771740, 3],
-      ['Wallace Falls', 47.867065, -121.678380, 4],
-      ['Bridal Veil Falls', 47.809015, -121.573967, 5]
-    ];
+    var generateTrailMarkers = function(trailArray) {
+      $scope.trailMarkers = [];
 
-    // shape defines the clickable area
-    // var shape = {
-    //   coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    //   type: 'poly'
-    // };
+      for (var i = 0; i < trailArray.length; i++) {
+        var marker = {
+          title: trailArray[i].trailName,
+          latitude: trailArray[i].lat,
+          longitude: trailArray[i].lon,
+          options: { draggable: false },
+          id: i,
+          hikeDist: trailArray[i].hikeDistance,
 
-    $scope.markertest = {
-          id: 0,
-          coords: {
-            latitude: 47.6205063,
-            longitude: -122.3493
-          },
-          options: { draggable: true },
           events: {
-            dragend: function (marker, eventName, args) {
-              $log.log('marker dragend');
-              var lat = marker.getPosition().lat();
-              var lon = marker.getPosition().lng();
-              $log.log(lat);
-              $log.log(lon);
-
-              $scope.marker.options = {
-                draggable: true,
-                labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
-                labelAnchor: "100 0",
-                labelClass: "marker-labels"
+            mouseover: function (markere, eventName, args) {
+              console.log('marker mouseover');
+              console.log(markere);
+              $scope.hikeDist = markere.model.hikeDist;
+              $scope.trailName = markere.model.title;
+               $scope.coords = {
+                latitude: markere.model.latitude,
+                longitude: markere.model.longitude
               };
-            }
-          }
+              $scope.windowshow = true;
+           }
+         }
         };
-
-    $scope.trailMarkers = [];
-
-    for (var i = 0; i < trailList.length; i++) {
-      var trail = trailList[i];
-      var marker = {
-        title: trail[0],
-        latitude: trail[1],
-        longitude: trail[2],
-        options: { draggable: false },
-        id: i
-      };
-      $scope.trailMarkers.push(marker);
-    }
-    // TODO: find a way to capture the attributes below and port into a
-    //       descriptor flag when you mouseover a trail marker
-    // difficulty: { type: String },
-    // length: { type: String },
-    // time: { type: Number }
-    $scope.map.trailMarkers = $scope.trailMarkers;
-
+        $scope.trailMarkers.push(marker);
+      }
+      $scope.map.trailMarkers = $scope.trailMarkers;
+    };
     uiGmapGoogleMapApi.then(function(maps) {
+        generateTrailMarkers(trailArray);
     });
-  });
+  }]);
 };
-
-//
-// // TODO: models/forecast to be written
-// -      // var chanceOfRain = require('/../models/forecast').currentPrecipitationProbability || 0.1;
-// -      var chanceOfRain = 0.1;
-// -
-// -      //  NOTE: drivingRadius is in meters, 80450 = 50 miles
-// -      var drivingRadius = document.getElementById('drivingRadius') || 80450;
-// -
-// -      // NOTE: Insert your starting point coordinates here
-// -      //       This one is for the UFO on stilts.
-// -      var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
-// -      var centerLongitude = document.getElementById('startPointLon') || -122.3493;
-// -      var zoom = 8;
-// -
-// -      // Create a mapmaking function
-// -
-// -      // use trailMarker in the Marker definition
-// -        var trailMarker = function() {
-// -          if (chanceOfRain < 0.20) {
-// -            return trailMarker = '/view/sunny.png';
-// -          }
-// -          if (chanceOfRain > 0.20 && chanceOfRain < 0.50) {
-// -            return trailMarker = '/view/partly_cloudy.png';
-// -          }
-// -          return trailMarker = '/view/rainy.png';
-// -        };
-// -
-// -      function makeMap() {
-// -
-// -        var map = new google.maps.Map(document.getElementById('map'), {
-// -          zoom: zoom,
-// -          center: {lat: centerLatitude, lng: centerLongitude},
-// -          // stretch goal: give user option for maptype
-// -          // mapTypeId: google.maps.MapTypeId.TERRAIN
-// -          mapTypeId: google.maps.MapTypeId.ROADMAP
-// -          // mapTypeId: google.maps.MapTypeId.HYBRID
-// -        });
-// -
-// -      // Adds markers to the map, function defined below.
-// -        setMarkers(map);
-// -
-// -        //Place circle on map
-// -        var circleDefinition = new google.maps.Circle({
-// -          center: {lat: centerLatitude, lng: centerLongitude},
-// -          radius:80450, // in meters, equals 50 miles
-// -          strokeColor:"#000000",
-// -          strokeOpacity:0.5,
-// -          strokeWeight:2,
-// -          fillColor:"#BADA55",
-// -          fillOpacity:0.2
-// -        });
-// -        circleDefinition.setMap(map);
-// -      }
-// -
-// -      // Data for the trail markers consist of a name, a LatLng and a zIndex for the
-// -      // order in which these markers should display on top of each other.
-// -
-// -      var trails = [
-// -
-// -        ['UFO on stilts', 47.6205063, -122.3493, 1],
-// -        ['Stately Troy Manor', 47.547284, -122.389856, 2],
-// -        ['Rattlesnake Ledge', 47.435545, -121.771740, 3],
-// -        ['Wallace Falls', 47.867065, -121.678380, 4],
-// -        ['Bridal Veil Falls', 47.809015, -121.573967, 5]
-// -      ];
-// -
-// -      function setMarkers(map) {
-// -      // Marker sizes are expressed as a Size of X,Y where the origin of the image
-// -      // (0,0) is located in the top left of the image.
-// -
-// -      // Origins, anchor positions and coordinates of the marker increase in the X
-// -      // direction to the right and in the Y direction down.
-// -
-// -        var image = {
-// -          url: trailMarker,
-// -          // This marker is 64 pixels wide by 64 pixels high.
-// -          size: new google.maps.Size(64, 64),
-// -          // The origin for this image is (0, 0).
-// -          origin: new google.maps.Point(0, 0),
-// -          // The anchor for this image is the base at (0, 64).
-// -          anchor: new google.maps.Point(0, 64)
-// -        };
-// -
-// -        // Shapes define the clickable region of the icon. The type defines an HTML
-// -        // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-// -        // The final coordinate closes the poly by connecting to the first coordinate.
-// -        var shape = {
-// -          coords: [1, 1, 1, 20, 18, 20, 18, 1],
-// -          type: 'poly'
-// -        };
-// -        for (var i = 0; i < trails.length; i++) {
-// -          var trail = trails[i];
-// -          var marker = new google.maps.Marker({
-// -            draggable: true,
-// -            animation: google.maps.Animation.DROP,
-// -            position: {lat: trail[1], lng: trail[2]},
-// -            map: map,
-// -            icon: image,
-// -            shape: shape,
-// -            title: trail[0],
-// -            zIndex: trail[3],
-// -          });
-// -        }
-// -      }
-// -      makeMap();
-// -    };
-// -  }]);

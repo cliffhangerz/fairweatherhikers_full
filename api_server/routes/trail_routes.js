@@ -7,6 +7,7 @@ const errorHandler = require(__dirname + '/../lib/db_error_handler');
 
 trailRouter.get('/trails', (req, res) => {
   Trail.find(null, (err, data) => {
+    console.log(data);
     if (err) return errorHandler(err, res);
     res.status(200).json(data);
   });
