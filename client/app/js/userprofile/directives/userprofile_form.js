@@ -4,7 +4,7 @@ module.exports = function(app) {
       restrict: 'EAC',
       require: '^ngController',
       transclude: true,
-      templateUrl: '/templates/userprofile/directives/userprofile_form.html',
+      templateUrl: '/templates/userprofile/directives/userprofile_view.html',
       scope: {
         favorite: '=',
         buttonText: '@',
