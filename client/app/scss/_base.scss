@@ -12,11 +12,25 @@ h1 {
   color: #FFF;
 }
 
-header {
-  height: 150px;
+h3 {
+  font-size: 1.5em;
+  font-family: Didot;
+  font-weight: bold;
+  padding-top: 5%;
+}
+
+p {
+  font-size: 1.2em;
+  font-family: Didot;
+  font-weight: bold;
+  padding-top: 5%;
+}
+
+footer {
+  background-color: rgba(164, 191, 208, 0.5);
   p {
-    background-color: #4EBD51;
-    max-width: 70%;
+    font-size: 1em;
+    padding: 5px;
   }
 }
 
