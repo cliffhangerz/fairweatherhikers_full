@@ -20,42 +20,7 @@
 		</section>
 	</header>
 
-	<section id="pagewrap">
-		<!-- <div ng-hide="hide-it">
-	    <h4>Your Favorite Hikes</h4>
-	    <ul>
-	      <li>Annette Lake</li>
-	      <li>Wallace Falls</li>
-	      <li>Rattlesnake Ledge</li>
-	      <li>Hurricane Ridge</li>
-	    </ul>
-	  </div> -->
-
-	<div>
-		<div class="forecast-list" data-ng-controller="TrailsController as trailsctrl">
-			<main-widget data-trail="trail">
-				<li class="weather" id="todayTemp" ng-bind-html="todayTempHTML"></li>
-			</main-widget>
-		</div>
-	</div>
-
-	<div data-ng-controller="MapController as mapctrl" class="map-div" id="map">
-		<div googlemapsdirective></div>
-	</div>
-
-	<div data-ng-controller="UserprofileController as userprofilectrl">
-		<div userprofileListItem></div>
-	</div>
-
-	<aside id="all-trails">
-		<h2>FAIR WEATHER TRAILS</h2>
-		<div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
-			<default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-				<li>
-					<button data-ng-click="trailsctrl.updateSelectedForecast(trail)">{{trail.trailName}}</button> | {{trail.distance}} miles | rating: {{trail.difficulty}} </li>
-		</div>
-	</aside>
-</section>
+	
 	<footer>
 		<section>
 			<img class="footer-buttons" src="./about.png" />
