@@ -29,10 +29,7 @@ module.exports = function(app) {
         clickedName = elem.trailName;
         clickedTemp = elem.weather.data[0].temperatureMax;
         this.selectedForecast = elem;
-        alert(this.selectedForecast.trailName);
         document.getElementById('todayTemp').innerHTML = this.selectedForecast.trailName +' Today\'s high: ' + this.selectedForecast.weather.data[0].temperatureMax;
-        alert(clickedName);
-        alert(clickedTemp);
       };
   }]);
 };
