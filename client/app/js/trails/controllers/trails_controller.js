@@ -23,13 +23,21 @@ module.exports = function(app) {
     };
     this.removeTrail = remote.remove.bind(remote);
     this.getAll();
+
+    this.getWeather = function() {
+      remote.getAll().then(function(data){
+        remote.addWeather(data);
+      });
+    }
+
     this.updateSelectedForecast = function(elem) {
         var clickedName;
         var clickedTemp;
+        console.log(elem);
         clickedName = elem.trailName;
-        clickedTemp = elem.weather.data[0].temperatureMax;
+        clickedTemp = elem.weather[0].temperatureMax;
         this.selectedForecast = elem;
-        document.getElementById('todayTemp').innerHTML = this.selectedForecast.trailName +' Today\'s high: ' + this.selectedForecast.weather.data[0].temperatureMax;
+        document.getElementById('todayTemp').innerHTML = this.selectedForecast.trailName +' Today\'s high: ' + this.selectedForecast.weather[0].temperatureMax;
       };
   }]);
 };
