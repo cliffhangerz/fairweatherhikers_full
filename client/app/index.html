@@ -19,7 +19,7 @@
 				<div data-ng-view></div>
 			</div>
 		</section>
-		/header>
+	</header>
 
 		<section id="pagewrap">
 			<div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
@@ -42,17 +42,9 @@
 				<div googlemapsdirective></div>
 			</div>
 
-		<!-- 	<section id="favorite">
-				<h2>FAVORITE TRAILS</h2>
-				<div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
-					<default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-						<li>{{trail.trailName}} | {{trail.distance}} miles | rating: {{trail.difficulty}}</li>
-				</div>
-			</section> -->
-
 			<aside id="all-trails">
 				<h2>ALL TRAILS</h2>
-				<div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
+				<div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getWeather()">
 					<default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
 						<li>
 							<button data-ng-click="trailsctrl.updateSelectedForecast(trail)">{{trail.trailName}}</button> | {{trail.distance}} miles | rating: {{trail.difficulty}} </li>
