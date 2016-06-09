@@ -46,7 +46,7 @@ module.exports = function(app) {
       return $http.put(this.url + '/' + resource._id, resource)
         .catch(handleError(this.errors, this.options.errMsgs.update || 'Could not UPDATE resource.'));
     };
-      }
-    );
-  }]);
+
+    return Resource;
+}]);
 };
