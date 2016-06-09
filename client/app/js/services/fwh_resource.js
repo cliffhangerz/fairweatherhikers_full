@@ -23,8 +23,9 @@ module.exports = function(app) {
                 this.weather.push(weather.data);
                 for (var k = 0; k < this.data.length; k++) {
                   for (var n = 0; n < weather.data.length; n++) {
+                    console.log("weather data: ", weather);
                     if (weather.data[n].lon === parseFloat(this.data[k].lon.toFixed(1)) && weather.data[n].lat === parseFloat(this.data[k].lat.toFixed(1))) {
-                      this.data[k].weather = weather.data[n];
+                      this.data[k].weather = weather;
                     }
                   }
                   console.log("trails have weather? ", this.data);
