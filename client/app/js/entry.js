@@ -3,7 +3,7 @@ const angmaps = require('angular-google-maps');
 const logger = require('angular-simple-logger');
 const lodash = require('lodash');
 
-const demoApp = angular.module('demoApp', [require('angular-route'), 'uiGmapgoogle-maps']);
+const demoApp = angular.module('demoApp', [require('angular-route'), require('angular-resource'), 'uiGmapgoogle-maps']);
 
 require('./services')(demoApp);
 require('./trails')(demoApp);

@@ -1,12 +1,9 @@
 var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
-  app.controller('MapController', ['fwhResource', '$scope', 'uiGmapGoogleMapApi', function(Resource, $scope, uiGmapGoogleMapApi) {
+  app.controller('MapController', ['fwhResource', '$scope', 'uiGmapGoogleMapApi', function(fwhResource, $scope, uiGmapGoogleMapApi) {
 
-    this.trails = [];
-    this.errors = [];
-    var trailData = new Resource(this.trails, this.errors, baseUrl + '/api/map', {errMsgs: {getall: 'Map Error!'}});
-    this.getAll = trailData.getAll.bind(trailData);
+    var trailArray = fwhResource.get();
                               // Seattle Center is at the following lat, long
     var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
     var centerLongitude = document.getElementById('startPointLon') || -122.3493;
@@ -49,21 +46,43 @@ module.exports = function(app) {
       }
     ];
 
-    $scope.trailMarkers = [];
-    for (var i = 0; i < trailList.length; i++) {
-      var trail = trailList[i];
-      var marker = {
-        title: res.data[trailName],
-        latitude: trail[1],
-        longitude: trail[2],
-        options: { draggable: false },
-        id: i
-      };
-      $scope.trailMarkers.push(marker);
-    }
-    $scope.map.trailMarkers = $scope.trailMarkers;
+    var generateTrailMarkers = function(trailArray) {
+      $scope.trailMarkers = [];
+
+      for (var i = 0; i < trailArray.length; i++) {
+        var marker = {
+          title: trailArray[i].trailName,
+          latitude: trailArray[i].lat,
+          longitude: trailArray[i].lon,
+          options: { draggable: false },
+          id: i
+        };
+        $scope.trailMarkers.push(marker);
+      }
+
+      $scope.map.trailMarkers = $scope.trailMarkers;
+    };
+    //generateTrailMarkers(trailArray);
+    // hikeDistance = hikeDistance[i];
+    // hikeTime = hikeTime[i];
+    // difficulty = difficulty[i];
+
+
+    // function attachInfoMessage(marker, infoMessage) {
+    //   var infoWindow = new google.maps.InfoWindow({
+    //     content: {
+    //
+    //     }
+    //   });
+    //
+    //   marker.addListener('click', function() {
+    //     infowindow.open(marker.get('map'), marker);
+    //   });
+    // }
+
 
     uiGmapGoogleMapApi.then(function(maps) {
-    });]
-  });
+        generateTrailMarkers(trailArray);
+    });
+  }]);
 };
