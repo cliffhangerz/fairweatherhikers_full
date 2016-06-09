@@ -1,0 +1,122 @@
+#pagewrap {
+  padding: 5px;
+  height: 90%;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.angular-google-map-container {
+  height: 400px;
+}
+
+.weather {
+  height: 20%;
+  padding: 5px 15px;
+}
+
+#all-trails {
+  clear: both;
+  height: 25%;
+  width: 90%;
+  padding: 0 15px;
+  float: left;
+}
+
+.map-div {
+  height: 30%;
+  width: 40%;
+  float: left;
+  padding: 5px 15px;
+}
+
+#favorite {
+  height: 30%;
+  width: 40%;
+  float: left;
+  padding: 5px 5px;
+  margin: 0px 5px 5px 5px;
+}
+
+footer {
+  clear: both;
+  padding: 0 15px;
+}
+
+/***MEDIA QUERIES**/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+
+  #pagewrap {
+    width: 94%;
+  }
+
+  .map-div {
+    width: 41%;
+    padding: 1% 4%;
+  }
+
+  #favorite {
+    width: 41%;
+    padding: 1% 4%;
+    margin: 0px 0px 5px 5px;
+    float: right;
+  }
+  #all-trails {
+    clear: both;
+    padding: 1% 4%;
+    width: auto;
+    float: none;
+  }
+
+  .weather, footer {
+    padding: 1% 4%;
+  }
+}
+
+/* for 700px or less */
+@media screen and (max-width: 600px) {
+
+  .map-div {
+    width: auto;
+    float: none;
+  }
+
+  #favorite {
+    width: auto;
+    float: none;
+    margin-left: 0px;
+  }
+
+  #all-trails {
+    width: auto;
+    float: none;
+  }
+}
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+  .weather {
+    height: auto;
+   }
+
+  #all-trails {
+    height: 20%;
+  }
+}
+
+.map-div {
+  background: #f8f8f8;
+}
+
+#all-trails, #favorite {
+  background-color: rgba(164, 191, 208, 0.5);
+}
+
+.weather, .map-div, #favorite, #all-trails {
+  margin-bottom: 5px;
+}
+
+#pagewrap, .weather, .map-div, #favorite, #all-trails, footer, header, .auth-view, .fwh-title {
+  border: solid 1px #ccc;
+}

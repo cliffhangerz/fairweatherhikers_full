@@ -8,6 +8,8 @@ node_modules/**
 **/**/bundle.js.map
 **/**/pro_bundle.js
 **/**/pro_bundle.js.map
+api_server/db/**/*
+
 # Compiled source #
 ###################
 *.com
