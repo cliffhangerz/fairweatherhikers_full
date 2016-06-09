@@ -2,6 +2,7 @@ const _ = require('lodash');
 module.exports = function(app) {
   app.factory('fwhResource', ['$http', 'handleError', function($http, handleError) {
     var Resource = function(resourceArr, errsArr, baseUrl, options) {
+      this.weather = [];
       this.data = resourceArr;
       this.url = baseUrl;
       this.errors = errsArr;
@@ -16,10 +17,18 @@ module.exports = function(app) {
           for (var i = 0; i < res.data.length && i < 10; i++) {
             this.data.push(res.data[i]);
           }
-          for (var j = 0; j < this.data.length && i < 10; j++) {
-            $http.get('http://localhost:3000/api/forecast?lat=' + res.data[j].lat.toFixed(1) + '&lon=' + res.data[j].lon.toFixed(1))
+          for (var j = 0; j < this.data.length && j < 10; j++) {
+            $http.get('http://localhost:3000/api/forecast?lat=' + this.data[j].lat.toFixed(1) + '&lon=' + this.data[j].lon.toFixed(1))
               .then((weather) => {
-                console.log(weather.data);
+                this.weather.push(weather.data);
+                for (var k = 0; k < this.data.length; k++) {
+                  for (var n = 0; n < weather.data.length; n++) {
+                    if (weather.data[n].lon === parseFloat(this.data[k].lon.toFixed(1)) && weather.data[n].lat === parseFloat(this.data[k].lat.toFixed(1))) {
+                      this.data[k].weather = weather.data[n];
+                    }
+                  }
+                  console.log("trails have weather? ", this.data);
+                }
               })
           }
         }, handleError(this.errors, this.options.errMsgs.getAll || 'Could not GET resource.'))
