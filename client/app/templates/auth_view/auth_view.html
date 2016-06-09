@@ -5,16 +5,19 @@
       {{authctrl.signup ? 'New User':'Existing User'}} ||
       {{(authctrl.signup ? 'Existing User':'New User')}}
     </a>
+    <div>
     <label for="email">Email:</label>
     <input type="text" required data-ng-model="authctrl.user.email">
-
+    </div>
+    <div>
     <label for="password">Password:</label>
     <input type="password" required data-ng-model="authctrl.user.password">
-
+    </div>
+    <div>
     <label data-ng-if="authctrl.signup" for="confirmation">Confirmation:</label>
     <input data-ng-if="authctrl.signup" required type="password"
       data-ng-model="authctrl.user.confirmation">
-
+    </div>
     <button type="submit" data-ng-disabled="authform.$invalid">{{authctrl.buttonText}}</button>
   </form>
 </section>

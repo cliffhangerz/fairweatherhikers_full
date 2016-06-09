@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>Fair Weather Hikers</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body data-ng-app="demoApp" id="#top">
-	<header>
-		<section class="fwh-title">
-			<h1>Fair Weather Hikers</h1>
-		</section>
-		<section id="login">
-			<div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
-				<p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
-				<div data-ng-view></div>
-			</div>
-		</section>
-	</header>
 
-	<footer>
-		<section>
-			<img class="footer-buttons" src="./about.png" />
-			<img class="footer-buttons" src="./facebook.png" />
-			<img class="footer-buttons" src="./tweet.png" />
-			<a href="#top" id="scrollup"><img class="footer-buttons" src="./up.png" /></a>
-		</section>
-	</footer>
+<div id="start-page-wrap">
+<header>
+  <section class="fwh-title">
+	<h1>Fair Weather Hikers</h1>
+  </section>
+</header>
+<main>
+  <section class="start-content">
+  	<h3>About Fair Weather Hikers</h3>
+    <p>Do you want to know the weather is like going to be on your favorite hiking trail?  That is why Fair Weather Hikers app was created.  To take advantage of this app, sign-up below.  It is free and guaranteed no spam, we promise!</p>
+    <p>To sign-up, enter your email and enter 8 or more characters for your password.</p>
+  </section>
+  <section>
+	  <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
+	    <p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
+	    <div data-ng-view></div>
+	  </div>
+  </section>
+</main>
 
-	<script src="./bundle.js"></script>
-	<a target="_blank">
+<footer>
+  <section>
+	<a href="http://facebook.com" target="_blank"><img class="footer-buttons" src="./facebook.png" alt="" /></a>
+	<a href="http://twitter.com" target="_blank"><img class="footer-buttons" src="./tweet.png" alt="" /></a</li>
+	<a href="#top" target="_blank"><img class="footer-buttons" src="./up.png" alt="" /></a>
+  </section>
+</footer>
+</div>
+<script src="./bundle.js"></script>
+<a target="_blank">
 </body>
-
 </html>

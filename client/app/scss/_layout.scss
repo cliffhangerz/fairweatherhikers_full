@@ -9,9 +9,36 @@
   height: 400px;
 }
 
+.start-content {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
 .weather {
   height: 20%;
   padding: 5px 15px;
+}
+
+#start-page-wrap {
+  padding: 5px;
+  width: 960px;
+  margin: 20px auto;
+}
+header {
+  height: 100px;
+  padding: 0 15px;
+}
+
+.auth-view {
+  width: 41%;
+  margin-left: 30%;
+  margin-top: 0px;
+}
+
+footer {
+  clear: both;
+  padding: 0 15px;
 }
 
 #all-trails {
@@ -36,11 +63,6 @@
   float: left;
   padding: 5px 5px;
   margin: 0px 5px 5px 5px;
-}
-
-footer {
-  clear: both;
-  padding: 0 15px;
 }
 
 /***MEDIA QUERIES**/
@@ -72,6 +94,22 @@ footer {
   .weather, footer {
     padding: 1% 4%;
   }
+
+  #start-page-wrap  {
+    width: 94%;
+  }
+  .start-content {
+    width: 41%;
+    padding: 1% 4%;
+  }
+  .auth-view {
+    width: 41%;
+    margin-left: 20%;
+  }
+
+  header, footer {
+    padding: 1% 4%;
+  }
 }
 
 /* for 700px or less */
@@ -92,10 +130,36 @@ footer {
     width: auto;
     float: none;
   }
+
+  .start-content {
+    width: auto;
+    float: none;
+  }
+  
+  .auth-view {
+    width: 41%;
+    float: none;
+    margin-left: 20%;
+    div {
+    margin-left: 5px;
+    }
+    input {
+    height: 15px;
+    width: auto;
+    }
+  }
 }
 
 /* for 480px or less */
 @media screen and (max-width: 480px) {
+
+  header {
+    height: auto;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
 
   .weather {
     height: auto;
@@ -104,20 +168,35 @@ footer {
   #all-trails {
     height: 20%;
   }
+
+  footer {
+    height: 50px;
+    width: 100%;
+  }
+  .auth-view {
+    width: auto;
+    div {
+    margin-left: 5px;
+    }
+    input {
+    height: 15px;
+    width: auto;
+    }
+  }
 }
 
 .map-div {
   background: #f8f8f8;
 }
 
-#all-trails, #favorite {
+#all-trails, #favorite, .start-content {
   background-color: rgba(164, 191, 208, 0.5);
 }
 
-.weather, .map-div, #favorite, #all-trails {
+.weather, .map-div, #favorite, #all-trails, header, .start-content, .auth-view {
   margin-bottom: 5px;
 }
 
-#pagewrap, .weather, .map-div, #favorite, #all-trails, footer, header, .auth-view, .fwh-title {
+#start-page-wrap, header, .start-content, #pagewrap, .weather, .map-div, #favorite, #all-trails, footer, header, .auth-view, .fwh-title, .start-content, h3, p {
   border: solid 1px #ccc;
 }
