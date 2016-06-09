@@ -21,11 +21,16 @@
 	</header>
 
 	<section id="pagewrap">
-		<!-- <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
-			<p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
-			<main data-ng-view>
-			</main>
-		</div> -->
+		<!-- <div ng-hide="hide-it">
+	    <h4>Your Favorite Hikes</h4>
+	    <ul>
+	      <li>Annette Lake</li>
+	      <li>Wallace Falls</li>
+	      <li>Rattlesnake Ledge</li>
+	      <li>Hurricane Ridge</li>
+	    </ul>
+	  </div> -->
+
 	<div>
 		<div class="forecast-list" data-ng-controller="TrailsController as trailsctrl">
 			<main-widget data-trail="trail">
