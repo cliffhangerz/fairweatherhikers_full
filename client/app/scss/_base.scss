@@ -6,6 +6,20 @@ html {
   background-size: cover;
  }
 
+h1 {
+  font-size: 3em;
+  font-family: Didot;
+  color: #FFF;
+}
+  
+header {
+  height: 150px;
+  p {
+    background-color: #4EBD51;
+    max-width: 70%;
+  }
+}
+
 .trail-list {
   font-size: 1em;
   background-color: rgba(164, 191, 208, 0.5);

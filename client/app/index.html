@@ -1,60 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body data-ng-app="demoApp" id="#top">
 
-  <section id="pagewrap">
-  <div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
-    <p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
-    <main data-ng-view>
-    </main>
-  </div>
-
-
-
-	<div>
-		<div class="forecast-list" data-ng-controller="TrailsController as trailsctrl">
-			<main-widget data-trail="trail">
-				<li class="weather" id="todayTemp" ng-bind-html="todayTempHTML"></li>
-			</main-widget>
+	<header>
+		<section class="fwh-title">
+			<h1>Fair Weather Hikers</h1>
+		</section>
+		<section id="login">
+			<div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
+				<p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
+				<div data-ng-view></div>
 			</div>
-		</div>
+		</section>
+		/header>
 
-	<div data-ng-controller="MapController as mapctrl" class="map-div" id="map">
-		<div googlemapsdirective></div>
-	</div>
+		<section id="pagewrap">
+			<div data-ng-controller="AuthController as globalAuth" data-ng-init="globalAuth.getEmail()">
+				<p data-ng-if="globalAuth.email">Hello: {{globalAuth.email}} <a href data-ng-click="globalAuth.logout()">Logout</a></p>
+				<main data-ng-view>
+				</main>
+			</div>
 
-  <section id="favorite">
-    <h2>FAVORITE TRAILS</h2>
-    <div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
-    <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
-    <li>{{trail.trailName}} | {{trail.distance}} miles | rating: {{trail.difficulty}}</li>
-    </div>
-  </section>
 
-  <aside id="all-trails">
-    <h2>ALL TRAILS</h2>
-    <div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
-    <default-trail-list-item data-ng-repeat="trail in trailsctrl.trails"  data-trail="trail">
-    <li><button data-ng-click="trailsctrl.updateSelectedForecast(trail)">{{trail.trailName}}</button> | {{trail.distance}} miles | rating: {{trail.difficulty}} </li>
-    </div>
-  </aside>
 
-  <footer>
-    <section>
-      <img class="footer-buttons" src="./about.png" />
-      <img class="footer-buttons" src="./facebook.png" />
-      <img class="footer-buttons" src="./tweet.png" />
-      <a href="#top" id="scrollup"><img class="footer-buttons" src="./up.png" /></a>
-    </section>
-  </footer>
+			<div>
+				<div class="forecast-list" data-ng-controller="TrailsController as trailsctrl">
+					<main-widget data-trail="trail">
+						<li class="weather" id="todayTemp" ng-bind-html="todayTempHTML"></li>
+					</main-widget>
+				</div>
+			</div>
 
-  <script src="./bundle.js"></script>
-  <a target="_blank">
+			<div data-ng-controller="MapController as mapctrl" class="map-div" id="map">
+				<div googlemapsdirective></div>
+			</div>
+
+		<!-- 	<section id="favorite">
+				<h2>FAVORITE TRAILS</h2>
+				<div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
+					<default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
+						<li>{{trail.trailName}} | {{trail.distance}} miles | rating: {{trail.difficulty}}</li>
+				</div>
+			</section> -->
+
+			<aside id="all-trails">
+				<h2>ALL TRAILS</h2>
+				<div class="trail-list" data-ng-controller="TrailsController as trailsctrl" data-ng-init="trailsctrl.getAll()">
+					<default-trail-list-item data-ng-repeat="trail in trailsctrl.trails" data-trail="trail">
+						<li>
+							<button data-ng-click="trailsctrl.updateSelectedForecast(trail)">{{trail.trailName}}</button> | {{trail.distance}} miles | rating: {{trail.difficulty}} </li>
+				</div>
+			</aside>
+
+			<footer>
+				<section>
+					<img class="footer-buttons" src="./about.png" />
+					<img class="footer-buttons" src="./facebook.png" />
+					<img class="footer-buttons" src="./tweet.png" />
+					<a href="#top" id="scrollup"><img class="footer-buttons" src="./up.png" /></a>
+				</section>
+			</footer>
+
+			<script src="./bundle.js"></script>
+			<a target="_blank">
 </body>
+
 </html>
