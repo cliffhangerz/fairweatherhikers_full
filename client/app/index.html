@@ -18,14 +18,12 @@
 
 
 	<div>
-		<div class="forecast-list" data-ng-controller="ForecastController as forecastctrl" data-ng-init="forecastctrl.getAll()">
+		<div class="forecast-list" data-ng-controller="ForecastController as forecastctrl">
 			<main-widget data-ng-repeat="forecast in forecastctrl.forecasts" data-forecast="forecast">
-				<li>{{forecast.day}}</li>
+				<li class="weather">{{forecast.day}}</li>
+			</main-widget>
 			</div>
-		<h1>Is this thing on?</h1>
-    <h2 class="weather">MY WEATHER TEMP HERE</h2>
 		</div>
-  </div>
 
 	<div data-ng-controller="MapController as mapctrl" class="map-div" id="map">
 		<div googlemapsdirective></div>
