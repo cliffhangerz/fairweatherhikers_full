@@ -7,7 +7,7 @@ module.exports = function(app) {
                               // Seattle Center is at the following lat, long
     var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
     var centerLongitude = document.getElementById('startPointLon') || -122.3493;
-    var zoom = document.getElementById('startZoom') || 7;
+    var zoom = document.getElementById('startZoom') || 8;
                                                       // 50 miles = 80450 meters
     var drivingRadius = document.getElementById('drivingRadius') || 80450;
 
@@ -48,8 +48,7 @@ module.exports = function(app) {
 
     var generateTrailMarkers = function(trailArray) {
       $scope.trailMarkers = [];
-
-      for (var i = 0; i < trailArray.length; i++) {
+      for (var i = 0; i < trailArray.length && i < 50; i++) {
         var marker = {
           title: trailArray[i].trailName,
           latitude: trailArray[i].lat,
@@ -57,27 +56,33 @@ module.exports = function(app) {
           options: { draggable: false },
           id: i,
           hikeDist: trailArray[i].hikeDistance,
+          precipProb: trailArray[i].precipProbability,
 
           events: {
             mouseover: function (markere, eventName, args) {
-              console.log('marker mouseover');
-              console.log(markere);
               $scope.hikeDist = markere.model.hikeDist;
               $scope.trailName = markere.model.title;
+              $scope.precipProb = markere.model.precipProbability;
                $scope.coords = {
                 latitude: markere.model.latitude,
                 longitude: markere.model.longitude
               };
+              $scope.windowoptions = {
+                             pixelOffset: new google.maps.Size(-1, -25, 'px', 'px')
+                           };
               $scope.windowshow = true;
            }
          }
         };
         $scope.trailMarkers.push(marker);
       }
+
       $scope.map.trailMarkers = $scope.trailMarkers;
     };
+
     uiGmapGoogleMapApi.then(function(maps) {
         generateTrailMarkers(trailArray);
+    }).catch(function(err){
     });
   }]);
 };

@@ -52,9 +52,7 @@ describe('Trail Routing test', () => {
     .send({ trailName: 'Test Trail',
             lat: 47.2110,
             lon: 122.3220,
-            difficulty: 'easy',
-            length: 5,
-            time: 2
+            difficulty: 'easy'
           })
     .end((err, res) => {
       expect(err).to.eql(null);
@@ -63,8 +61,6 @@ describe('Trail Routing test', () => {
       expect(res.body.lat).to.eql(47.2110);
       expect(res.body.lon).to.eql(122.3220);
       expect(res.body.difficulty).to.eql('easy');
-      expect(res.body.length).to.eql('5');
-      expect(res.body.time).to.eql(2);
       done();
     });
   });

@@ -15,5 +15,4 @@ module.exports = exports = function(data) {
     return hikeMatchResults += 'The best day to hike \n --' + trail.trailName + '--\nis ' + results + '\n'; //eslint-disable-line
   });
 
-  console.log(hikeMatchResults);
 };
