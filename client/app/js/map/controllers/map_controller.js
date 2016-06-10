@@ -4,7 +4,6 @@ module.exports = function(app) {
   app.controller('MapController', ['mapResource', '$scope', 'uiGmapGoogleMapApi', function(mapResource, $scope, uiGmapGoogleMapApi) {
 
     var trailArray = mapResource.get();
-    console.log("trail array is: ", trailArray);
                               // Seattle Center is at the following lat, long
     var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
     var centerLongitude = document.getElementById('startPointLon') || -122.3493;
@@ -49,7 +48,6 @@ module.exports = function(app) {
 
     var generateTrailMarkers = function(trailArray) {
       $scope.trailMarkers = [];
-      console.log("trail array ", trailArray);
       for (var i = 0; i < trailArray.length && i < 50; i++) {
         var marker = {
           title: trailArray[i].trailName,
@@ -62,8 +60,6 @@ module.exports = function(app) {
 
           events: {
             mouseover: function (markere, eventName, args) {
-              console.log('marker mouseover');
-              console.log(markere);
               $scope.hikeDist = markere.model.hikeDist;
               $scope.trailName = markere.model.title;
               $scope.precipProb = markere.model.precipProbability;
@@ -85,10 +81,8 @@ module.exports = function(app) {
     };
 
     uiGmapGoogleMapApi.then(function(maps) {
-      console.log("uiGoogleMap is called here");
         generateTrailMarkers(trailArray);
     }).catch(function(err){
-        console.error("uiGoogleMap error: ", err)
     });
   }]);
 };

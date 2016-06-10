@@ -34,7 +34,6 @@ module.exports = exports = function(data, res, cb) {
         var rainChance = Math.round(rainChanceString);
         goodHike.weatherForecast[i] = rainChance;
 
-        console.log(trailName + ' rain chance for ' + date + ' = ' +
           rainChance + ' %');
         if (i === 2) {
           counter++;
