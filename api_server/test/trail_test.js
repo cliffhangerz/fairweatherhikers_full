@@ -53,8 +53,7 @@ describe('Trail Routing test', () => {
             lat: 47.2110,
             lon: 122.3220,
             difficulty: 'easy',
-            length: 5,
-            time: 2
+            hikeDistance: 5
           })
     .end((err, res) => {
       expect(err).to.eql(null);
@@ -63,8 +62,7 @@ describe('Trail Routing test', () => {
       expect(res.body.lat).to.eql(47.2110);
       expect(res.body.lon).to.eql(122.3220);
       expect(res.body.difficulty).to.eql('easy');
-      expect(res.body.length).to.eql('5');
-      expect(res.body.time).to.eql(2);
+      expect(res.body.hikeDistance).to.eql('5');
       done();
     });
   });
@@ -93,8 +91,7 @@ describe('Trail Routing test', () => {
               lat: 47.13245,
               lon: 123.6370,
               dificulty: 'easy',
-              length: '32',
-              time: 4
+              hikeDistance: '32'
             })
       .end((err, res) => {
         expect(err).to.eql(null);
