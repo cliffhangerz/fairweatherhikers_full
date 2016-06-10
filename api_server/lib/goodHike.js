@@ -33,9 +33,6 @@ module.exports = exports = function(data, res, cb) {
         var rainChanceString = parsed['daily']['data'][i]['precipProbability'] * 100; // eslint-disable-line
         var rainChance = Math.round(rainChanceString);
         goodHike.weatherForecast[i] = rainChance;
-
-        console.log(trailName + ' rain chance for ' + date + ' = ' +
-          rainChance + ' %');
         if (i === 2) {
           counter++;
           goodWeatherTrailArray.push(goodHike);

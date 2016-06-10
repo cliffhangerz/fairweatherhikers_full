@@ -7,6 +7,7 @@ var trailSchema = new Schema({
   lon: { type: Number },
   difficulty: { type: String },
   hikeDistance: { type: String },
+  elevGain: { type: Number },
   userId: { type: String }
 });
 

@@ -8,8 +8,6 @@ var fs = require('fs');
 module.exports = exports = function(lat, lon) {
 
   var url = 'https://api.forecast.io/forecast/' + API_KEY + '/' + lat + ',' + lon
-  console.log("lat: ", lat);
-  console.log("lon: ", lon);
 
   var request = https.get(url, (response) => {
     response.setEncoding('utf-8');
@@ -28,7 +26,6 @@ module.exports = exports = function(lat, lon) {
       catch(fish) {
         return console.log(fish);
       }
-      console.log("forecast is:", forecast);
 
       // Let's add some data to the db
       // It should overwrite whatever is there because it will change each day
@@ -43,7 +40,6 @@ module.exports = exports = function(lat, lon) {
           temperatureMin: forecast.daily.data[i].temperatureMin,
           temperatureMax: forecast.daily.data[i].temperatureMax
         };
-        console.log('schemeifiedData is', schemeifiedData);
         var postOptions = {
           hostname: 'localhost',
           port: '3000',
@@ -59,7 +55,6 @@ module.exports = exports = function(lat, lon) {
           postData.write(preppedData);
           postData.end();
       }
-      console.log('preppedData: ', preppedData);
     });
   });
 };
