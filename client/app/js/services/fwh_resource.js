@@ -14,7 +14,7 @@ module.exports = function(app) {
       return $http.get(this.url)
         .then((res) => {
           var data = []
-          for (var i = 0; i < res.data.length; i++) {
+          for (var i = 0; i < res.data.length && i < 50; i++) {
             console.log("res data is ",res.data[i]);
             data.push(res.data[i]);
           }
