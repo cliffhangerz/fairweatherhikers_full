@@ -7,16 +7,16 @@
     </a>
     <div>
     <label for="email">Email:</label>
-    <input type="text" required data-ng-model="authctrl.user.email">
+    <input type="text" required data-ng-model="authctrl.user.email" placeholder="email address">
     </div>
     <div>
     <label for="password">Password:</label>
-    <input type="password" required data-ng-model="authctrl.user.password">
+    <input type="password" required data-ng-model="authctrl.user.password" placeholder="8 or more characters">
     </div>
     <div>
     <label data-ng-if="authctrl.signup" for="confirmation">Confirmation:</label>
     <input data-ng-if="authctrl.signup" required type="password"
-      data-ng-model="authctrl.user.confirmation">
+      data-ng-model="authctrl.user.confirmation" placeholder="confirm password">
     </div>
     <button type="submit" data-ng-disabled="authform.$invalid">{{authctrl.buttonText}}</button>
   </form>
