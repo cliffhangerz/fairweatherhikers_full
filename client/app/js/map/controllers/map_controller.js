@@ -7,7 +7,7 @@ module.exports = function(app) {
                               // Seattle Center is at the following lat, long
     var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
     var centerLongitude = document.getElementById('startPointLon') || -122.3493;
-    var zoom = document.getElementById('startZoom') || 7;
+    var zoom = document.getElementById('startZoom') || 8;
                                                       // 50 miles = 80450 meters
     var drivingRadius = document.getElementById('drivingRadius') || 80450;
 
@@ -64,6 +64,7 @@ module.exports = function(app) {
               console.log(markere);
               $scope.hikeDist = markere.model.hikeDist;
               $scope.trailName = markere.model.title;
+              $scope.precipProb = markere.model.precipProbability;
                $scope.coords = {
                 latitude: markere.model.latitude,
                 longitude: markere.model.longitude
@@ -77,24 +78,6 @@ module.exports = function(app) {
 
       $scope.map.trailMarkers = $scope.trailMarkers;
     };
-    //generateTrailMarkers(trailArray);
-    // hikeDistance = hikeDistance[i];
-    // hikeTime = hikeTime[i];
-    // difficulty = difficulty[i];
-
-
-    // function attachInfoMessage(marker, infoMessage) {
-    //   var infoWindow = new google.maps.InfoWindow({
-    //     content: {
-    //
-    //     }
-    //   });
-    //
-    //   marker.addListener('click', function() {
-    //     infowindow.open(marker.get('map'), marker);
-    //   });
-    // }
-
 
     uiGmapGoogleMapApi.then(function(maps) {
         generateTrailMarkers(trailArray);

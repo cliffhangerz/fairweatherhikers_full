@@ -13,13 +13,12 @@ module.exports = function(app) {
     this.updateSelectedForecast = function(elem) {
         var clickedName;
         var clickedTemp;
+        var clickedPrecip;
         clickedName = elem.trailName;
         clickedTemp = elem.weather[0].temperatureMax;
+        clickedPrecip = elem.weather[0].precipProbability;
         this.selectedForecast = elem;
-        alert(this.selectedForecast.trailName);
-        document.getElementById('todayTemp').innerHTML = this.selectedForecast.trailName +' Today\'s high: ' + this.selectedForecast.weather[0].temperatureMax;
-        alert(clickedName);
-        alert(clickedTemp);
+        document.getElementById('todayTemp').innerHTML = 'At ' + this.selectedForecast.trailName +': Today\'s High: ' + this.selectedForecast.weather[0].temperatureMax + 'F Chance of Rain: ' + this.selectedForecast.weather[0].precipProbability * 100 + '%';
       };
 
       this.getWeather = function() {
