@@ -4,6 +4,7 @@ module.exports = function(app) {
   app.controller('MapController', ['mapResource', '$scope', 'uiGmapGoogleMapApi', function(mapResource, $scope, uiGmapGoogleMapApi) {
 
     var trailArray = mapResource.get();
+    console.log("trail array is: ", trailArray);
                               // Seattle Center is at the following lat, long
     var centerLatitude = document.getElementById('startPointLat') || 47.6205063;
     var centerLongitude = document.getElementById('startPointLon') || -122.3493;
@@ -48,7 +49,7 @@ module.exports = function(app) {
 
     var generateTrailMarkers = function(trailArray) {
       $scope.trailMarkers = [];
-
+      console.log("trail array ", trailArray);
       for (var i = 0; i < trailArray.length; i++) {
         var marker = {
           title: trailArray[i].trailName,
@@ -57,6 +58,7 @@ module.exports = function(app) {
           options: { draggable: false },
           id: i,
           hikeDist: trailArray[i].hikeDistance,
+          precipProb: trailArray[i].precipProbability,
 
           events: {
             mouseover: function (markere, eventName, args) {
@@ -69,6 +71,9 @@ module.exports = function(app) {
                 latitude: markere.model.latitude,
                 longitude: markere.model.longitude
               };
+              $scope.windowoptions = {
+                             pixelOffset: new google.maps.Size(-1, -25, 'px', 'px')
+                           };
               $scope.windowshow = true;
            }
          }
@@ -80,7 +85,10 @@ module.exports = function(app) {
     };
 
     uiGmapGoogleMapApi.then(function(maps) {
+      console.log("uiGoogleMap is called here");
         generateTrailMarkers(trailArray);
+    }).catch(function(err){
+        console.error("uiGoogleMap error: ", err)
     });
   }]);
 };
